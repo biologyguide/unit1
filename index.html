@@ -1,0 +1,1736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biochem Study Kit</title>
+<meta name="description" content="Notes, flashcards, practice tests and lab drills for macromolecules and enzymes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.6l8.1 4.7v9.4L12 21.4l-8.1-4.7V7.3z' fill='none' stroke='%231D6A51' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='12' r='2.7' fill='%231D6A51'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400..800;1,400..600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: one calm reading column (max 940px) under a sticky bar of five tabs; each tab is its own view. */
+:root{
+  --bg:#F5F7F3; --surface:#FFFFFF; --sunk:#ECF0EA; --ink:#16201B; --muted:#5A665F; --faint:#8A958E;
+  --line:#DCE3DC; --line-strong:#B9C4BC;
+  --accent:#1D6A51; --accent-ink:#FFFFFF; --accent-soft:#DCEDE4;
+  --good:#2B7A4B; --good-soft:#DFF0E5; --bad:#B0413A; --bad-soft:#F7E2DF; --warn:#9A6410; --warn-soft:#F6EBD5;
+  --t-intro:#3F68A6; --t-carbs:#A86A12; --t-prot:#A83E63; --t-enz:#6550AE;
+  --el-c:#3B3F3D; --el-h:#8E9993; --el-o:#D0463B; --el-n:#3D63C9; --el-p:#DD7718; --el-s:#C9A20F;
+  --b-a:#3C8D5A; --b-t:#C2543F; --b-c:#3A6CC0; --b-g:#B98A10;
+  --font:"Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --shadow:0 1px 2px rgba(22,32,27,.05), 0 8px 24px rgba(22,32,27,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1412; --surface:#161D1A; --sunk:#1D2622; --ink:#E5ECE7; --muted:#9DAAA2; --faint:#6F7C74;
+    --line:#29332E; --line-strong:#3D4943;
+    --accent:#5CC39B; --accent-ink:#0B1611; --accent-soft:#1A3328;
+    --good:#62C98E; --good-soft:#173022; --bad:#EE7B71; --bad-soft:#3A1F1C; --warn:#E3B05A; --warn-soft:#3A2D16;
+    --t-intro:#88AAE8; --t-carbs:#E2A84D; --t-prot:#E78CAD; --t-enz:#A897EF;
+    --el-c:#C8CFCB; --el-h:#7E8983; --el-o:#F07468; --el-n:#7F9FF0; --el-p:#F4A15A; --el-s:#E6C84A;
+    --b-a:#6CC88E; --b-t:#F08B77; --b-c:#86A8F2; --b-g:#E3BC4C;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1412; --surface:#161D1A; --sunk:#1D2622; --ink:#E5ECE7; --muted:#9DAAA2; --faint:#6F7C74;
+  --line:#29332E; --line-strong:#3D4943;
+  --accent:#5CC39B; --accent-ink:#0B1611; --accent-soft:#1A3328;
+  --good:#62C98E; --good-soft:#173022; --bad:#EE7B71; --bad-soft:#3A1F1C; --warn:#E3B05A; --warn-soft:#3A2D16;
+  --t-intro:#88AAE8; --t-carbs:#E2A84D; --t-prot:#E78CAD; --t-enz:#A897EF;
+  --el-c:#C8CFCB; --el-h:#7E8983; --el-o:#F07468; --el-n:#7F9FF0; --el-p:#F4A15A; --el-s:#E6C84A;
+  --b-a:#6CC88E; --b-t:#F08B77; --b-c:#86A8F2; --b-g:#E3BC4C;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding-inline:20px}
+@media (max-width:480px){.wrap{padding-inline:16px}}
+h1,h2,h3,h4{margin:0;line-height:1.18;text-wrap:balance}
+h1{font-size:clamp(30px,4.6vw,42px);font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(24px,3.2vw,30px);font-weight:750;letter-spacing:-.022em}
+h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+h4{font-size:16px;font-weight:700}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.25em}
+li+li{margin-top:6px}
+b,strong{font-weight:700}
+em{font-style:italic}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:18px;color:var(--muted);max-width:64ch}
+.muted{color:var(--muted)}
+.sub{font-variant-position:sub}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;font-weight:750;letter-spacing:-.01em;line-height:1.15}
+.brand svg{width:26px;height:26px;color:var(--accent);flex:none}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:12.5px;letter-spacing:0}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;border:0;background:none;font:inherit;font-weight:600;font-size:14.5px;color:var(--muted);padding:7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.tab:hover{color:var(--ink);background:var(--sunk)}
+.tab[aria-selected="true"]{color:var(--accent-ink);background:var(--accent)}
+@media (max-width:680px){.top .wrap{padding-block:10px;gap:8px}.tabs{width:100%}}
+
+main{padding-block:34px 72px}
+.view{display:grid;gap:30px}
+.view-head{display:grid;gap:10px}
+
+/* buttons, chips */
+.btn{appearance:none;font:inherit;font-size:14.5px;font-weight:650;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s,transform .1s}
+.btn:hover{border-color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.ghost{border-color:transparent;background:var(--sunk)}
+.btn.ghost:hover{border-color:var(--line-strong)}
+.btn.sm{padding:6px 12px;font-size:13.5px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+[data-t="intro"]{--tc:var(--t-intro)} [data-t="carbs"]{--tc:var(--t-carbs)} [data-t="prot"]{--tc:var(--t-prot)} [data-t="enz"]{--tc:var(--t-enz)}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;color:var(--tc,var(--accent));background:color-mix(in srgb,var(--tc,var(--accent)) 13%,transparent);white-space:nowrap;line-height:1.5}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.xtra{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line-strong);border-radius:999px;padding:0 7px;margin-left:4px;vertical-align:2px;line-height:1.6}
+
+/* learn: intro */
+.hero{display:grid;gap:14px;padding-bottom:4px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-size:16px}
+.legend-note{font-size:14px;color:var(--muted)}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump a{text-decoration:none;font-weight:650;font-size:14px;color:var(--ink);padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);display:inline-flex;align-items:center;gap:8px}
+.jump a:hover{border-color:var(--line-strong)}
+.jump a i{width:8px;height:8px;border-radius:50%;background:var(--tc,var(--accent))}
+
+/* tables */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.5}
+.big4{min-width:720px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child th,tr:last-child td{border-bottom:0}
+thead th{font-size:14px;font-weight:750;white-space:nowrap}
+thead th span{display:inline-flex;align-items:center;gap:8px}
+thead th span::before{content:"";width:9px;height:9px;border-radius:3px;background:var(--tc)}
+tbody th{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);white-space:nowrap;width:1%}
+.mini{font-size:14.5px}
+.mini td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap}
+.yes{color:var(--good);font-weight:700}
+.no{color:var(--bad);font-weight:700}
+
+/* element tiles, styled after periodic-table squares with CPK model colors */
+.el{--ec:var(--el-c);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;font-weight:800;font-size:13.5px;color:var(--ink);border:1.5px solid var(--ec);background:color-mix(in srgb,var(--ec) 16%,transparent);margin-right:4px;line-height:1}
+.el[data-e="H"]{--ec:var(--el-h)} .el[data-e="O"]{--ec:var(--el-o)} .el[data-e="N"]{--ec:var(--el-n)} .el[data-e="P"]{--ec:var(--el-p)} .el[data-e="S"]{--ec:var(--el-s)}
+.el.often{border-style:dashed}
+.elements-row{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center}
+.elements-row .label{font-size:13px;font-weight:650;color:var(--muted);margin-right:8px}
+
+/* lessons */
+.lesson{display:grid;gap:0;padding-top:12px;scroll-margin-top:90px}
+#big4{scroll-margin-top:90px}
+.lesson-head{display:grid;gap:10px;padding-block:26px 6px;border-top:2px solid var(--ink)}
+.lesson-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13.5px;color:var(--muted)}
+.lesson-sum{color:var(--muted);font-size:17px;max-width:62ch}
+.lesson-head .btn{justify-self:start;margin-top:4px}
+.part{font-size:12.5px;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:var(--tc);padding-top:26px}
+.concept{display:grid;gap:13px;padding-block:24px;border-bottom:1px solid var(--line)}
+.concept > p,.concept > ul{max-width:68ch}
+.slide{margin:0;background:var(--sunk);border-radius:12px;padding:12px 16px 13px;display:grid;gap:3px}
+.slide .src{font-size:11.5px;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.slide blockquote{margin:0;font-weight:560;font-size:16px}
+.tip{font-size:15px;padding:11px 15px;border-radius:12px;background:var(--accent-soft);max-width:68ch}
+.tip b:first-child{color:var(--accent)}
+.diagram{margin:0;display:grid;gap:8px}
+.diagram svg{width:100%;height:auto;display:block;max-width:100%}
+.diagram figcaption{font-size:13.5px;color:var(--muted)}
+.scroll-x{overflow-x:auto}
+.scroll-x svg{min-width:520px}
+svg text{font-family:var(--font);fill:var(--muted);font-size:13px}
+svg .t-ink{fill:var(--ink);font-weight:650}
+svg .t-acc{fill:var(--accent);font-weight:700}
+.d-mono{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.d-link,.d-back{stroke:var(--accent);stroke-width:3;fill:none}
+.d-back{stroke:var(--line-strong);stroke-width:5;stroke-linecap:round}
+.d-arrow{stroke:var(--faint);stroke-width:2;fill:none}
+.d-head{fill:var(--faint)}
+.d-hb{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:2 2}
+.d-axis{stroke:var(--line-strong);stroke-width:1.5;fill:none}
+.d-grid{stroke:var(--line);stroke-width:1;fill:none}
+.d-curve{stroke:var(--faint);stroke-width:3;fill:none;stroke-linecap:round}
+.d-curve.enz{stroke:var(--accent)}
+.d-level{stroke:var(--line-strong);stroke-width:1.5;stroke-dasharray:4 4;fill:none}
+.d-ea{stroke:var(--faint);stroke-width:2;fill:none}
+.d-ea.enz{stroke:var(--accent)}
+.d-enz{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.d-sub{fill:color-mix(in srgb,var(--t-carbs) 30%,var(--surface));stroke:var(--t-carbs);stroke-width:2}
+.d-phos{fill:color-mix(in srgb,var(--el-p) 22%,var(--surface));stroke:var(--el-p);stroke-width:2}
+.d-sugar{fill:color-mix(in srgb,var(--t-carbs) 18%,var(--surface));stroke:var(--t-carbs);stroke-width:2}
+.d-base{fill:color-mix(in srgb,var(--b-c) 16%,var(--surface));stroke:var(--b-c);stroke-width:2}
+.d-area{fill:var(--accent-soft);stroke:none}
+.b-A{fill:color-mix(in srgb,var(--b-a) 24%,var(--surface));stroke:var(--b-a);stroke-width:1.5}
+.b-T{fill:color-mix(in srgb,var(--b-t) 24%,var(--surface));stroke:var(--b-t);stroke-width:1.5}
+.b-C{fill:color-mix(in srgb,var(--b-c) 24%,var(--surface));stroke:var(--b-c);stroke-width:1.5}
+.b-G{fill:color-mix(in srgb,var(--b-g) 24%,var(--surface));stroke:var(--b-g);stroke-width:1.5}
+svg .b-t{font-family:var(--mono);font-weight:600;fill:var(--ink);font-size:15px}
+
+.analogies{display:grid;gap:8px;max-width:68ch}
+.label{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.from{font-size:12px;font-weight:650;color:var(--accent);margin-left:4px}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.compare > div{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--surface);display:grid;gap:8px;align-content:start;min-width:0}
+.compare ul{font-size:15px}
+.fgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fcell{border:1px solid var(--line);border-radius:14px;padding:14px 15px 15px;background:var(--surface);display:grid;gap:6px;align-content:start;min-width:0;font-size:15px}
+.fcell .fl{font-family:var(--mono);font-weight:600;font-size:13px;color:var(--tc,var(--accent));}
+.fcell h4{font-size:16.5px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:650}
+.flow span{padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.flow i{font-style:normal;color:var(--faint)}
+.mixups{display:grid;gap:10px;padding-block:24px}
+.mixups ul{display:grid;gap:8px;padding-left:1.1em;max-width:70ch}
+.mixups li{margin:0}
+.mixups li::marker{color:var(--bad)}
+.seq{font-family:var(--mono);font-weight:600;letter-spacing:.08em}
+@media (max-width:720px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.compare,.fgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* packet blanks */
+.packet{border:1.5px dashed var(--line-strong);border-radius:16px;padding:18px 20px 20px;display:grid;gap:12px;background:var(--surface);margin-top:24px}
+.packet-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.packet ol{display:grid;gap:10px;padding-left:1.4em;line-height:1.95}
+.packet li{margin:0}
+.packet li::marker{color:var(--faint);font-variant-numeric:tabular-nums}
+.blank{font-weight:650;color:transparent;background:var(--sunk);border-bottom:2px solid var(--line-strong);border-radius:5px 5px 0 0;padding:1px 6px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:color .15s,background .15s;user-select:none}
+.blank:hover{background:color-mix(in srgb,var(--accent) 12%,var(--sunk))}
+.blank.on{color:var(--accent);background:var(--accent-soft);border-bottom-color:var(--accent);user-select:text}
+
+/* flashcards */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{appearance:none;font:inherit;font-size:14px;font-weight:650;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.seg button i{width:8px;height:8px;border-radius:50%;background:var(--tc,var(--accent))}
+.seg button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink);background:var(--surface)}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;user-select:none}
+.switch input{accent-color:var(--accent);width:16px;height:16px}
+.fc-wrap{display:grid;gap:16px}
+.fc-stage{perspective:1600px}
+.fc{position:relative;height:310px;cursor:pointer;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.fc.flipped{transform:rotateY(180deg)}
+.fc.instant{transition:none}
+.face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:var(--shadow);display:grid;grid-template-rows:auto 1fr auto;padding:18px 22px;text-align:center}
+.face.back{transform:rotateY(180deg);background:color-mix(in srgb,var(--accent-soft) 45%,var(--surface))}
+.face-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);font-weight:650}
+.face-text{align-self:center;justify-self:center;max-width:34ch;font-size:clamp(23px,3.4vw,30px);font-weight:750;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;overflow-wrap:anywhere}
+.face-text.long{font-size:clamp(17px,2.4vw,20px);font-weight:550;letter-spacing:0;line-height:1.5;max-width:44ch}
+.face-hint{font-size:12.5px;color:var(--faint)}
+.known-pill{font-size:12px;font-weight:700;color:var(--good);background:var(--good-soft);padding:2px 9px;border-radius:999px}
+.fc-controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.fc-controls .grp{display:flex;gap:8px;align-items:center}
+.pos{font-variant-numeric:tabular-nums;font-weight:650;color:var(--muted);min-width:64px;text-align:center}
+.btn.know{border-color:var(--good);color:var(--good)}
+.btn.learn{border-color:var(--warn);color:var(--warn)}
+.bar{height:8px;border-radius:999px;background:var(--sunk);overflow:hidden}
+.bar > i{display:block;height:100%;background:var(--good);border-radius:inherit;transition:width .3s}
+.progress-line{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.empty{border:1px dashed var(--line-strong);border-radius:18px;padding:28px;text-align:center;display:grid;gap:12px;justify-items:center;color:var(--muted)}
+.keys{font-size:13px;color:var(--faint)}
+kbd{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line-strong);border-bottom-width:2px;border-radius:5px;padding:0 5px;color:var(--muted);background:var(--surface)}
+
+/* practice test */
+.panel{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:20px 22px;display:grid;gap:16px}
+.field{display:grid;gap:8px}
+.q-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.q-text{font-size:21px;font-weight:700;letter-spacing:-.012em;line-height:1.35;text-wrap:pretty}
+.opts{display:grid;gap:9px}
+.opt{appearance:none;display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:var(--surface);font:inherit;font-size:16px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt .k{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--sunk);font-size:12.5px;font-weight:750;color:var(--muted);margin-top:1px}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.right .k{background:var(--good);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .k{background:var(--bad);color:var(--surface)}
+.opt.dim{opacity:.55}
+.explain{border-radius:12px;padding:12px 15px;font-size:15px;background:var(--sunk)}
+.explain b:first-child{margin-right:4px}
+.explain.ok b:first-child{color:var(--good)}
+.explain.no b:first-child{color:var(--bad)}
+.score-big{font-size:clamp(46px,8vw,64px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.topic-bars{display:grid;gap:10px}
+.topic-bar{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 54px;gap:12px;align-items:center;font-size:14px}
+.topic-bar .bar > i{background:var(--tc)}
+.topic-bar span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.missed{display:grid;gap:12px}
+.missed-item{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:5px;font-size:15px}
+.written{display:grid;gap:14px}
+.w-item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:16px 18px;display:grid;gap:10px}
+.w-item h4{font-size:16.5px;line-height:1.35}
+textarea{font:inherit;font-size:15.5px;color:var(--ink);background:var(--bg);border:1px solid var(--line-strong);border-radius:12px;padding:10px 12px;width:100%;resize:vertical;min-height:72px}
+textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.w-actions{display:flex;flex-wrap:wrap;gap:8px}
+.model{font-size:15px;background:var(--accent-soft);border-radius:12px;padding:11px 14px}
+@media (max-width:520px){.topic-bar{grid-template-columns:minmax(0,1fr) 54px}.topic-bar .bar{grid-column:1/-1;grid-row:2}}
+
+/* lab */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.tool{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:20px;display:grid;gap:14px;align-content:start;min-width:0}
+.tool.wide{grid-column:1/-1}
+.tool-head{display:grid;gap:4px}
+.tool-head p{color:var(--muted);font-size:15px}
+.strand{display:flex;flex-wrap:wrap;gap:5px}
+.base{display:inline-grid;place-items:center;width:30px;height:36px;border-radius:8px;font-family:var(--mono);font-weight:600;font-size:16px;color:var(--ink);border:1.5px solid var(--bc);background:color-mix(in srgb,var(--bc) 18%,var(--surface))}
+.base[data-b="A"]{--bc:var(--b-a)} .base[data-b="T"]{--bc:var(--b-t)} .base[data-b="C"]{--bc:var(--b-c)} .base[data-b="G"]{--bc:var(--b-g)} .base[data-b="?"]{--bc:var(--line-strong);color:var(--faint)}
+.base.bad{outline:2.5px solid var(--bad);outline-offset:1px}
+.dna-input{font-family:var(--mono);font-size:17px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink)}
+.dna-input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.msg-line{font-size:15px;min-height:1.5em}
+.msg-line.ok{color:var(--good);font-weight:650}
+.msg-line.no{color:var(--bad);font-weight:650}
+.org-list{display:grid;gap:8px}
+.org-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.org-row:last-child{border-bottom:0}
+.formula{font-family:var(--mono);font-weight:600;font-size:16px}
+.org-row .why{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.org-row .why.ok::before{content:"Correct. ";color:var(--good);font-weight:700}
+.org-row .why.no::before{content:"Not quite. ";color:var(--bad);font-weight:700}
+.sort-card{border-radius:14px;background:var(--sunk);padding:22px 16px;text-align:center;font-size:23px;font-weight:750;letter-spacing:-.015em}
+.sort-btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sort-btns button{justify-content:flex-start}
+.sort-btns button i{width:9px;height:9px;border-radius:3px;background:var(--tc);flex:none}
+.tally{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.lab-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:22px;align-items:start}
+.controls{display:grid;gap:16px}
+.ctl{display:grid;gap:6px}
+.ctl-top{display:flex;justify-content:space-between;font-size:14.5px;font-weight:650}
+.ctl-top output{font-variant-numeric:tabular-nums;color:var(--accent)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+select{font:inherit;font-size:15px;padding:8px 10px;border-radius:10px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);width:100%}
+.readout{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.readout .pct{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:3px 11px;border-radius:999px}
+.pill.ok{color:var(--good);background:var(--good-soft)}
+.pill.slow{color:var(--warn);background:var(--warn-soft)}
+.pill.dead{color:var(--bad);background:var(--bad-soft)}
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.chart{display:grid;gap:4px}
+.chart svg{width:100%;height:auto;display:block}
+.chart .label{font-size:11.5px}
+.enz-fig svg{width:100%;max-width:300px;height:auto;display:block}
+.d-marker{fill:var(--accent);stroke:var(--surface);stroke-width:2.5}
+.d-vline{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:3 3}
+@media (max-width:760px){.tools,.lab-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:420px){.charts{grid-template-columns:minmax(0,1fr)}}
+
+
+.foot{padding-block:28px 40px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);display:grid;gap:4px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}.fc{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l8.1 4.7v9.4L12 21.4l-8.1-4.7V7.3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.7" fill="currentColor"/></svg>
+      <span>Biochem Study Kit<small>Macromolecules &amp; Enzymes</small></span>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab" role="tab" type="button" data-view="learn" aria-selected="true">Learn</button>
+      <button class="tab" role="tab" type="button" data-view="cards" aria-selected="false">Flashcards</button>
+      <button class="tab" role="tab" type="button" data-view="test" aria-selected="false">Practice test</button>
+      <button class="tab" role="tab" type="button" data-view="lab" aria-selected="false">Lab</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============================ LEARN ============================ -->
+<section class="view" data-view="learn">
+  <div class="hero">
+    <p class="eyebrow">Biology · Biochemistry unit</p>
+    <h1>Macromolecules &amp; Enzymes</h1>
+    <p class="lede">Your four class slide decks rewritten in plain words, with diagrams, memory tricks and the answers to your packet blanks. Everything here comes from your slides; anything extra is marked <span class="xtra">Extra</span>.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <nav class="jump" aria-label="Jump to a lesson">
+    <a href="#big4" data-jump="big4"><i></i>The Big Four</a>
+    <a href="#lesson-intro" data-jump="lesson-intro" data-t="intro"><i></i>Intro to Macromolecules</a>
+    <a href="#lesson-carbs" data-jump="lesson-carbs" data-t="carbs"><i></i>Carbohydrates &amp; Lipids</a>
+    <a href="#lesson-prot" data-jump="lesson-prot" data-t="prot"><i></i>Proteins &amp; Nucleic Acids</a>
+    <a href="#lesson-enz" data-jump="lesson-enz" data-t="enz"><i></i>Enzymes</a>
+  </nav>
+
+  <section id="big4" class="view-head">
+    <h2>The Big Four at a glance</h2>
+    <p class="muted">Your packet's review page (p. 15) asks for exactly these four rows. If you can fill this table from memory, you know the unit.</p>
+    <div class="tablewrap">
+      <table class="big4">
+        <thead><tr><th></th><th data-t="carbs"><span>Carbohydrates</span></th><th data-t="carbs"><span>Lipids</span></th><th data-t="prot"><span>Proteins</span></th><th data-t="prot"><span>Nucleic acids</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Examples</th><td>Glucose, starch, glycogen, cellulose, chitin</td><td>Fats &amp; oils: triglycerides, phospholipids, steroids, waxes</td><td>Collagen, hemoglobin, actin &amp; myosin, antibodies, insulin, enzymes</td><td>DNA and RNA</td></tr>
+          <tr><th scope="row">Monomer</th><td>Monosaccharide (e.g. glucose)</td><td>Fatty acids + glycerol</td><td>Amino acids (20 kinds)</td><td>Nucleotides</td></tr>
+          <tr><th scope="row">Function</th><td>Quick energy; structure (cellulose, chitin)</td><td>Energy storage (2× carbs), insulation, cell membrane</td><td>Structure, transport, movement, defense, hormones, enzymes</td><td>Store genetic info: instructions for making proteins</td></tr>
+          <tr><th scope="row">Elements</th><td><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span></td><td><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span></td><td><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span><span class="el" data-e="N">N</span><span class="el often" data-e="S" title="often">S</span></td><td><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span><span class="el" data-e="N">N</span><span class="el" data-e="P">P</span></td></tr>
+          <tr><th scope="row">Foods</th><td>Bread, rice, pasta, fruit, sugar, potatoes</td><td>Butter, oil, avocados, meat, nuts</td><td>Meat, fish, eggs, beans, nuts</td><td>Anything that was once alive</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend-note">Element tiles use the colors chemists use in molecule models: carbon dark, hydrogen grey, oxygen red, nitrogen blue, phosphorus orange, sulfur yellow. A dashed S means "often".</p>
+  </section>
+
+  <!-- ===== Lesson 1 ===== -->
+  <article class="lesson" id="lesson-intro" data-t="intro">
+    <header class="lesson-head">
+      <div class="lesson-meta"><span class="chip" data-t="intro">Lesson 1</span><span>Intro to Macromolecules 26 TR · 13 slides · Packet p. 10</span></div>
+      <h2>Intro to Macromolecules</h2>
+      <p class="lesson-sum">What the big molecules of life are, which elements they're made of, and how small pieces link up to build big ones.</p>
+    </header>
+
+    <div class="concept">
+      <h3>What is a macromolecule?</h3>
+      <figure class="slide"><span class="src">Slide 3</span><blockquote>Macromolecules are LARGE molecules composed of more than 200 atoms.</blockquote></figure>
+      <p><b>Macro</b> means big. A water molecule (H<sub>2</sub>O) has only 3 atoms. One protein molecule can have thousands. Your notes count a molecule as a macromolecule once it has more than 200 atoms.</p>
+      <p>Living things are built mostly from four kinds of macromolecules: <b>carbohydrates</b>, <b>lipids</b>, <b>proteins</b> and <b>nucleic acids</b> (slides 4 and 7).</p>
+    </div>
+
+    <div class="concept">
+      <h3>They are organic compounds</h3>
+      <figure class="slide"><span class="src">Slides 5–6</span><blockquote>Macromolecules are ORGANIC compounds that contain carbon (C) and hydrogen (H). Important biological elements also include oxygen, nitrogen, and phosphorus.</blockquote></figure>
+      <p>In chemistry, <b>organic</b> has nothing to do with farming. It means the molecule contains <b>both carbon and hydrogen</b>. All four macromolecules are organic, and carbon forms the backbone of every one of them.</p>
+      <div class="elements-row">
+        <div><span class="label">Most important</span><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span></div>
+        <div><span class="label">Less common</span><span class="el" data-e="N">N</span><span class="el" data-e="P">P</span></div>
+      </div>
+      <p>Slide 8 asks you to sort formulas into organic and not organic. Here is the answer key with the reason for each:</p>
+      <div class="tablewrap">
+        <table class="mini">
+          <thead><tr><th>Formula</th><th>Organic?</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>H₂O</td><td class="no">No</td><td>Water. No carbon at all.</td></tr>
+            <tr><td>O₂</td><td class="no">No</td><td>Oxygen gas. Only oxygen.</td></tr>
+            <tr><td>C₆H₁₂O₆</td><td class="yes">Yes</td><td>Glucose, a sugar. Has C and H.</td></tr>
+            <tr><td>NaCl</td><td class="no">No</td><td>Table salt: sodium and chlorine.</td></tr>
+            <tr><td>CH₄</td><td class="yes">Yes</td><td>Methane. Has C and H.</td></tr>
+            <tr><td>CO₂</td><td class="no">No</td><td>Carbon dioxide has carbon but <b>no hydrogen</b>.</td></tr>
+            <tr><td>C₈₈H₁₆₄O₁₀</td><td class="yes">Yes</td><td>A big fat (lipid) molecule. Has C and H.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tip"><b>Quick check:</b> look for a C <em>and</em> an H in the formula. One without the other is not enough. CO₂ is the classic trick question.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Monomers build polymers</h3>
+      <figure class="slide"><span class="src">Slide 11</span><blockquote>Macromolecules are POLYMERS. A polymer is a large molecule (macromolecule) that is formed from smaller molecules (monomers) bonding together in long chains.</blockquote></figure>
+      <figure class="diagram"><div class="scroll-x" data-diagram="chain"></div></figure>
+      <p>Break the words apart: <b>mono</b> = one, <b>poly</b> = many, <b>-mer</b> = part. A monomer is one small piece. A polymer is many of those pieces bonded into a long chain. Every macromolecule is a polymer built from its own kind of monomer (see the Monomer row in the Big Four table).</p>
+      <div class="analogies">
+        <p class="label">Analogies for slides 12–13</p>
+        <ul>
+          <li>Monomers are like <b>LEGO bricks</b> and polymers are like the <b>LEGO building</b>, because you use many bricks to build it. <span class="from">From your slides</span></li>
+          <li>Monomers are like <b>beads</b> and polymers are like a <b>necklace</b>, because many beads strung together make the necklace.</li>
+          <li>Monomers are like <b>train cars</b> and polymers are like the <b>whole train</b>, because the cars link into one long chain.</li>
+          <li>Monomers are like <b>letters</b> and polymers are like <b>words</b>, because letters in a different order spell a different word. This one fits proteins especially well.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mixups">
+      <h3>Common mix-ups</h3>
+      <ul>
+        <li><b>"Found in living things" is not the same as organic.</b> Water is in every cell, but it has no carbon, so it isn't organic.</li>
+        <li><b>A monomer alone isn't a macromolecule.</b> One glucose (24 atoms) is a monomer. Starch, made of many glucose units, is the macromolecule.</li>
+        <li><b>Carbon alone doesn't make it organic.</b> You need carbon <em>and</em> hydrogen.</li>
+      </ul>
+    </div>
+
+    <div class="packet">
+      <div class="packet-head"><h3>Packet check · p. 10</h3><button class="btn sm reveal-all" type="button">Reveal all</button></div>
+      <p class="muted">Tap a blank to check what goes there.</p>
+      <ol>
+        <li>Macromolecules are <span class="blank">organic</span> compounds that contain <span class="blank">carbon</span> &amp; <span class="blank">hydrogen</span>, and may contain other elements.</li>
+        <li>Most important biological elements are: <span class="blank">carbon, hydrogen, oxygen</span>.</li>
+        <li>Some less common biological elements: <span class="blank">nitrogen</span> and <span class="blank">phosphorus</span>.</li>
+        <li>Macromolecules: <span class="blank">large</span> molecules composed of more than <span class="blank">200</span> atoms. Ex: <span class="blank">a protein molecule</span>.</li>
+        <li>Monomer: <span class="blank">one small molecule that bonds with others to build a polymer</span>.</li>
+        <li>Polymer: <span class="blank">a large molecule made of many monomers bonded together in long chains</span>.</li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- ===== Lesson 2 ===== -->
+  <article class="lesson" id="lesson-carbs" data-t="carbs">
+    <header class="lesson-head">
+      <div class="lesson-meta"><span class="chip" data-t="carbs">Lesson 2</span><span>Carbohydrates &amp; Lipids 26 TR · 23 slides · Packet pp. 11–12</span></div>
+      <h2>Carbohydrates &amp; Lipids</h2>
+      <p class="lesson-sum">Macromolecules #1 and #2. Both are made of only C, H and O, but they do different jobs: carbs give quick energy and structure, lipids store energy, insulate and build membranes.</p>
+    </header>
+
+    <p class="part">Carbohydrates</p>
+
+    <div class="concept">
+      <h3>Sugars and starches</h3>
+      <figure class="slide"><span class="src">Slides 2–5</span><blockquote>You get carbohydrates from bread, rice, pasta, fruits, sugars and potatoes. An example is glucose, with the chemical formula C₆H₁₂O₆. Carbohydrates contain the elements C, H and O.</blockquote></figure>
+      <p>Carbohydrates ("carbs") are <b>sugars and chains of sugars</b>. Glucose is the classic example. Read its formula like a recipe: C₆H₁₂O₆ means <b>6 carbon, 12 hydrogen and 6 oxygen</b> atoms.</p>
+      <div class="elements-row"><div><span class="label">Elements</span><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span></div></div>
+      <p class="tip"><b>Spot a sugar by its name.</b> Slide 6 lists fructose, glucose, lactose, dextrose and maltose. What do you notice? The names of sugars always end in <b>-ose</b>.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Monosaccharides build polysaccharides</h3>
+      <figure class="slide"><span class="src">Slide 7</span><blockquote>Monomer: monosaccharides (ex. GLUCOSE, C₆H₁₂O₆). Polymer: polysaccharides (ex. STARCH, GLYCOGEN &amp; CELLULOSE).</blockquote></figure>
+      <figure class="diagram"><div class="scroll-x" data-diagram="hexchain"></div></figure>
+      <p><b>Saccharide</b> means sugar. So a <b>mono</b>saccharide is one sugar and a <b>poly</b>saccharide is many sugars bonded in a chain. It's the same monomer → polymer idea from Lesson 1.</p>
+      <ul>
+        <li><b>Starch</b>: a complex carb (slide 4) found in potatoes, rice, pasta and bread. It's how plants store sugar. <span class="xtra">Extra</span></li>
+        <li><b>Glycogen</b>: a chain of many glucose units (slide 8). It's how animals, including you, store glucose, mostly in the liver and muscles. <span class="xtra">Extra</span></li>
+        <li><b>Cellulose</b>: forms the cell walls of plants (slide 10).</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>What carbs do: energy and structure</h3>
+      <div class="compare">
+        <div>
+          <span class="label">Function 1 · Energy</span>
+          <p><b>Your body turns glucose into quick energy</b> (slide 9). Carbs are the fuel your cells reach for first.</p>
+        </div>
+        <div>
+          <span class="label">Function 2 · Structure</span>
+          <ul>
+            <li><b>Cellulose</b> forms the cell walls of plants (slide 10).</li>
+            <li><b>Chitin</b> forms the exoskeleton of insects and the cell walls of fungi (slide 11).</li>
+          </ul>
+        </div>
+      </div>
+      <p class="tip"><b>Packet answer:</b> The two main functions of carbohydrates are providing quick energy and providing structure.</p>
+    </div>
+
+    <p class="part">Lipids</p>
+
+    <div class="concept">
+      <h3>Fats and oils</h3>
+      <figure class="slide"><span class="src">Slides 14–15, 17</span><blockquote>You get lipids from butter, oil, avocados, meat and nuts. Lipids are commonly known as fats &amp; oils. Ex: triglycerides, phospholipids, steroids, waxes. Made of the elements C, H, and O.</blockquote></figure>
+      <p>Lipids are the greasy, oily molecules. They have the <b>same elements as carbs</b> (C, H, O) but far fewer oxygen atoms. The fat molecule from Lesson 1, C₈₈H₁₆₄O₁₀, has 164 hydrogens and only 10 oxygens. Lipids also don't mix with water, which is why oil floats in a puddle. <span class="xtra">Extra</span></p>
+      <div class="elements-row"><div><span class="label">Elements</span><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span></div></div>
+    </div>
+
+    <div class="concept">
+      <h3>Saturated vs. unsaturated fats</h3>
+      <figure class="slide"><span class="src">Slide 16</span><blockquote>There are healthy fats with double bonds, like olive oil, called unsaturated fats. There are bad fats with only single bonds, like butter, called saturated fats.</blockquote></figure>
+      <div class="compare">
+        <div>
+          <span class="label">Saturated</span>
+          <ul>
+            <li>Only <b>single bonds</b> between carbons</li>
+            <li>Example: <b>butter</b></li>
+            <li>The "bad" fat in your notes</li>
+            <li>Straight chains pack tightly, so it's <b>solid</b> at room temperature <span class="xtra">Extra</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label">Unsaturated</span>
+          <ul>
+            <li>Has <b>double bonds</b> between carbons</li>
+            <li>Example: <b>olive oil</b></li>
+            <li>The "healthy" fat in your notes</li>
+            <li>Double bonds put kinks in the chain, so it's <b>liquid</b> at room temperature <span class="xtra">Extra</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="tip"><b>Remember it:</b> <b>S</b>aturated = <b>S</b>ingle bonds = <b>S</b>olid, like a stick of butter.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Building blocks: fatty acids and glycerol</h3>
+      <figure class="slide"><span class="src">Slide 18</span><blockquote>Monomers are fatty acids and glycerol.</blockquote></figure>
+      <figure class="diagram">
+        <svg viewBox="0 0 360 132" role="img" aria-label="A triglyceride: one glycerol backbone attached to three fatty acid tails">
+          <rect class="d-sugar" x="14" y="12" width="82" height="100" rx="10"/>
+          <text class="t-ink" x="55" y="66" text-anchor="middle">Glycerol</text>
+          <polyline class="d-link" points="96,28 112,20 128,36 144,20 160,36 176,20 192,36 208,20 224,36 240,20 256,36 272,20 288,36"/>
+          <polyline class="d-link" points="96,62 112,54 128,70 144,54 160,70 176,54 192,70 208,54 224,70 240,54 256,70 272,54 288,70"/>
+          <polyline class="d-link" points="96,96 112,88 128,104 144,88 160,104 176,88 192,104 208,88 224,104 240,88 256,104 272,88 288,104"/>
+          <text x="298" y="32">fatty</text><text x="298" y="47">acid</text>
+          <text x="298" y="66">fatty</text><text x="298" y="81">acid</text>
+          <text x="298" y="100">fatty</text><text x="298" y="115">acid</text>
+          <text x="14" y="128">one glycerol + three fatty acids</text>
+        </svg>
+        <figcaption>A common fat (a triglyceride) is one glycerol holding three fatty acid tails, a bit like the letter E. <span class="xtra">Extra</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="concept">
+      <h3>What lipids do</h3>
+      <div class="fgrid" data-t="carbs">
+        <div class="fcell"><span class="fl">Slide 19</span><h4>Energy storage</h4><p>Lipids store <b>2× more energy</b> than carbohydrates. Carbs are pocket cash for quick spending; fat is the savings account.</p></div>
+        <div class="fcell"><span class="fl">Slide 20</span><h4>Insulation</h4><p>A layer of fat under the skin <b>helps keep us warm</b> by holding body heat in.</p></div>
+        <div class="fcell"><span class="fl">Slide 21</span><h4>Cell membrane</h4><p>The <b>phospholipid bilayer</b> (two layers of lipids) forms the cell membrane and <b>controls what goes in and out</b> of cells.</p></div>
+      </div>
+    </div>
+
+    <div class="concept">
+      <h3>Lipids and homeostasis</h3>
+      <figure class="slide"><span class="src">Slide 22</span><blockquote>Homeostasis: maintain a stable internal environment. How does each function of lipids help maintain homeostasis?</blockquote></figure>
+      <p><b>Homeostasis</b> means keeping conditions inside your body steady (temperature, energy supply, what's inside each cell), no matter what is happening outside. Here are model answers for the three packet sentences:</p>
+      <ul>
+        <li><b>Energy storage</b> maintains homeostasis because the body has stored fuel to keep cells running even when you haven't eaten.</li>
+        <li><b>Insulation</b> maintains homeostasis because a layer of fat holds in heat, keeping body temperature stable when it's cold outside.</li>
+        <li><b>The cell membrane</b> maintains homeostasis because it controls what goes in and out of the cell, keeping the inside of the cell stable.</li>
+      </ul>
+    </div>
+
+    <div class="mixups">
+      <h3>Common mix-ups</h3>
+      <ul>
+        <li><b>Starch, glycogen and cellulose are all polysaccharides</b> made of glucose. Plants store starch, animals store glycogen, and cellulose builds plant cell walls.</li>
+        <li><b>Carbs and lipids have the same elements</b> (C, H, O). Tell them apart by their jobs and examples, not their elements.</li>
+        <li><b>Saturated = single bonds.</b> Unsaturated is the one with double bonds.</li>
+        <li><b>Glucose is the monomer</b> (a monosaccharide). Don't call it a polysaccharide.</li>
+      </ul>
+    </div>
+
+    <div class="packet">
+      <div class="packet-head"><h3>Packet check · pp. 11–12</h3><button class="btn sm reveal-all" type="button">Reveal all</button></div>
+      <p class="muted">Tap a blank to check what goes there.</p>
+      <ol>
+        <li>An example is <span class="blank">glucose</span>, with the chemical formula <span class="blank">C₆H₁₂O₆</span>.</li>
+        <li>More complex carbs include: <span class="blank">starches (like glycogen and cellulose)</span>.</li>
+        <li>Carbohydrates contain the elements: <span class="blank">C</span>, <span class="blank">H</span> and <span class="blank">O</span>.</li>
+        <li>Provides: <span class="blank">energy</span> · Provides: <span class="blank">structure</span></li>
+        <li>Cellulose: <span class="blank">forms the cell walls of plants</span> · Chitin: <span class="blank">exoskeletons of insects and cell walls of fungi</span></li>
+        <li>Your body turns glucose into <span class="blank">quick</span> energy.</li>
+        <li>Lipids are commonly known as <span class="blank">fats &amp; oils</span>, made of the elements <span class="blank">C</span>, <span class="blank">H</span> and <span class="blank">O</span>.</li>
+        <li>Lipid monomers: <span class="blank">fatty acids and glycerol</span>.</li>
+        <li>Lipids store <span class="blank">2×</span> more energy than <span class="blank">carbohydrates</span>. Lipids help keep us <span class="blank">warm</span>.</li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- ===== Lesson 3 ===== -->
+  <article class="lesson" id="lesson-prot" data-t="prot">
+    <header class="lesson-head">
+      <div class="lesson-meta"><span class="chip" data-t="prot">Lesson 3</span><span>Proteins &amp; Nucleic Acids 26 TR · 32 slides · Packet pp. 13–14</span></div>
+      <h2>Proteins &amp; Nucleic Acids</h2>
+      <p class="lesson-sum">Macromolecules #3 and #4. Proteins do almost every job in your body. Nucleic acids (DNA and RNA) hold the instructions for building those proteins.</p>
+    </header>
+
+    <p class="part">Proteins</p>
+
+    <div class="concept">
+      <h3>Amino acids are the building blocks</h3>
+      <figure class="slide"><span class="src">Slides 3–4</span><blockquote>Monomers of proteins are AMINO ACIDS. Different proteins are made up of an infinite combination of 20 amino acids.</blockquote></figure>
+      <p>Think of the <b>20 amino acids as a 20-letter alphabet</b>. A protein is a "word" that can be hundreds of letters long, in any order. That's why there's a practically endless number of different proteins.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Sequence → structure → function</h3>
+      <figure class="slide"><span class="src">Slides 5–6</span><blockquote>Amino acids are joined together to form a polypeptide chain (protein). The structure and function of a protein depends on its amino acid sequence.</blockquote></figure>
+      <div class="flow"><span>Order of amino acids</span><i>→</i><span>Shape of the protein</span><i>→</i><span>Its job</span></div>
+      <p>Amino acids link into a chain called a <b>polypeptide</b>. The chain then folds into a 3-D shape, and that <b>shape decides what the protein can do</b>. Change the order of amino acids and you change the shape, and the protein may stop working.</p>
+      <p>Your packet adds: because proteins do so many jobs, <b>an incorrectly shaped protein caused by a mutation</b> is often the reason behind genetic diseases.</p>
+      <p class="muted">The picture on slide 1 shows the levels of folding: <b>primary</b> (the amino acid sequence), <b>secondary</b> (coils and folds), <b>tertiary</b> (the full 3-D shape) and <b>quaternary</b> (several chains working together). <span class="xtra">Extra</span></p>
+    </div>
+
+    <div class="concept">
+      <h3>Elements in proteins</h3>
+      <figure class="slide"><span class="src">Slide 7</span><blockquote>Proteins are made of carbon, hydrogen, oxygen, nitrogen, and often sulfur.</blockquote></figure>
+      <div class="elements-row"><div><span class="label">Elements</span><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span><span class="el" data-e="N">N</span><span class="el often" data-e="S">S</span></div></div>
+      <p class="tip"><b>Remember it:</b> carbs and lipids are just CHO. Proteins add <b>N</b> (nitrogen) and often <b>S</b> (sulfur).</p>
+    </div>
+
+    <div class="concept">
+      <h3>Six jobs proteins do</h3>
+      <div class="fgrid" data-t="prot">
+        <div class="fcell"><span class="fl">S · Slide 8</span><h4>Structure</h4><p><b>Collagen</b> gives structure and support to skin, muscle, bones and connective tissue.</p></div>
+        <div class="fcell"><span class="fl">T · Slide 9</span><h4>Transport</h4><p><b>Hemoglobin</b> carries oxygen in your red blood cells.</p></div>
+        <div class="fcell"><span class="fl">M · Slides 10–11</span><h4>Movement</h4><p><b>Actin &amp; myosin</b> make muscles contract. <b>Kinesin</b> "walks" cargo through the cell; it isn't alive, it's just a protein.</p></div>
+        <div class="fcell"><span class="fl">D · Slide 12</span><h4>Defense</h4><p><b>Antibodies</b> help your body fight diseases by attacking pathogens (germs).</p></div>
+        <div class="fcell"><span class="fl">H · Slide 13</span><h4>Hormones</h4><p>Help cells <b>communicate</b>. Example: <b>insulin</b> helps your cells use sugar.</p></div>
+        <div class="fcell"><span class="fl">E · Slides 14–15</span><h4>Enzymes</h4><p>Speed up and regulate chemical reactions. <b>Lactase</b> digests the sugar in milk; <b>ATP synthase</b> makes ATP, your cells' energy chemical.</p></div>
+      </div>
+      <p class="tip"><b>Remember the six:</b> <b>S</b>tudents <b>T</b>ake <b>M</b>any <b>D</b>ifficult <b>H</b>omework <b>E</b>xams → Structure, Transport, Movement, Defense, Hormones, Enzymes.</p>
+      <p>Enzyme names usually end in <b>-ase</b>, and the front part often tells you what they break down: <b>lact</b>ase → lactose (milk sugar), <b>lip</b>ase → lipids, <b>prote</b>ase → proteins, amylase → starch. <span class="xtra">Extra</span></p>
+    </div>
+
+    <p class="part">Nucleic acids</p>
+
+    <div class="concept">
+      <h3>DNA and RNA: the genetic material</h3>
+      <figure class="slide"><span class="src">Slides 17–19</span><blockquote>Anything that you eat that was once alive has nucleic acids! Nucleic acids are made of nucleotides, found in every cell. Two examples are DNA (deoxyribonucleic acid) and RNA (ribonucleic acid), also known as genetic material. DNA is double stranded in the shape of a twisted ladder. RNA is single stranded.</blockquote></figure>
+      <p>Nucleic acids store and pass on <b>genetic information</b>. Every cell has them, so an apple, a steak or a leaf of lettuce all contain DNA. DNA has <b>two strands</b> twisted into a ladder shape (the "double helix"). RNA has <b>one strand</b>.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Nucleotides: three parts</h3>
+      <figure class="slide"><span class="src">Slides 20–21</span><blockquote>Monomers of nucleic acids: nucleotides. 3 parts of a nucleotide: sugar, phosphate, nitrogen base. Elements: carbon, hydrogen, oxygen, nitrogen, phosphorus.</blockquote></figure>
+      <figure class="diagram">
+        <svg viewBox="0 0 380 124" role="img" aria-label="A nucleotide: phosphate connected to sugar connected to a nitrogen base">
+          <circle class="d-phos" cx="48" cy="54" r="27"/><text class="t-ink" x="48" y="59" text-anchor="middle">P</text>
+          <path class="d-link" d="M75 54 H122"/>
+          <polygon class="d-sugar" points="158,22 192,46 180,86 136,86 124,46"/>
+          <path class="d-link" d="M192 54 H232"/>
+          <rect class="d-base" x="232" y="32" width="132" height="44" rx="9"/><text class="t-ink" x="298" y="59" text-anchor="middle">A, T, C or G</text>
+          <text x="48" y="114" text-anchor="middle">Phosphate</text>
+          <text x="158" y="114" text-anchor="middle">Sugar</text>
+          <text x="298" y="114" text-anchor="middle">Nitrogen base</text>
+        </svg>
+      </figure>
+      <div class="elements-row"><div><span class="label">Elements</span><span class="el" data-e="C">C</span><span class="el" data-e="H">H</span><span class="el" data-e="O">O</span><span class="el" data-e="N">N</span><span class="el" data-e="P">P</span></div></div>
+      <p class="tip"><b>Remember it:</b> nucleic acids are the only macromolecule in your notes with <b>P</b>, and the P comes from the <b>P</b>hosphate.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Base pairing: A–T and C–G</h3>
+      <figure class="slide"><span class="src">Slides 22, 28</span><blockquote>Bases in DNA: adenine, thymine, guanine, cytosine. A pairs with T. C pairs with G. The nitrogen base on one strand is connected to the nitrogen base on the other strand by hydrogen bonds.</blockquote></figure>
+      <figure class="diagram"><div class="scroll-x" data-diagram="ladder"></div><figcaption>DNA untwisted. The sides of the ladder are sugar and phosphate; each rung is a pair of bases, and the dashed gaps are the hydrogen bonds that hold the two strands together.</figcaption></figure>
+      <p class="tip"><b>Remember it:</b> <b>A</b>pple in the <b>T</b>ree, <b>C</b>ar in the <b>G</b>arage.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Writing a complementary strand</h3>
+      <figure class="slide"><span class="src">Slides 26–27</span><blockquote>Write the complementary sequence of the following DNA sequences.</blockquote></figure>
+      <p>"Complementary" means the <b>partner strand</b>. Go letter by letter and swap each base for its partner: A ↔ T, C ↔ G. Don't copy the strand and don't flip its order.</p>
+      <div class="tablewrap">
+        <table class="mini">
+          <thead><tr><th>Given strand</th><th>Complementary strand</th></tr></thead>
+          <tbody>
+            <tr><td class="seq">ACTTGGAAGCA</td><td class="seq">TGAACCTTCGT</td></tr>
+            <tr><td class="seq">GTTACCGGACC</td><td class="seq">CAATGGCCTGG</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Want more practice? The <a href="#lab" data-go="lab">Lab tab</a> has a pairing trainer that makes new strands for you.</p>
+    </div>
+
+    <div class="concept">
+      <h3>What DNA does</h3>
+      <figure class="slide"><span class="src">Slides 24–25, 32</span><blockquote>DNA stores information on how to make a protein. DNA carries a genetic code. DNA is like the IKEA instructions for furniture because it tells your body which proteins to make and how to build them.</blockquote></figure>
+      <div class="flow"><span>DNA (instructions)</span><i>→</i><span>order of amino acids</span><i>→</i><span>protein shape</span><i>→</i><span>protein's job</span></div>
+      <p>This is how the two halves of the lesson connect: the order of bases in DNA is a code for the order of amino acids in a protein. Since sequence decides shape and shape decides job, DNA ends up controlling what your proteins can do.</p>
+    </div>
+
+    <div class="concept">
+      <h3>DNA vs. RNA</h3>
+      <div class="tablewrap">
+        <table class="mini">
+          <thead><tr><th style="font-family:var(--font)"></th><th>DNA</th><th>RNA</th></tr></thead>
+          <tbody>
+            <tr><td style="font-family:var(--font);font-weight:650">Strands</td><td>Double stranded (twisted ladder)</td><td>Single stranded</td></tr>
+            <tr><td style="font-family:var(--font);font-weight:650">Sugar</td><td>Deoxyribose <span class="xtra">Extra</span></td><td>Ribose <span class="xtra">Extra</span></td></tr>
+            <tr><td style="font-family:var(--font);font-weight:650">Bases</td><td>A, T, C, G</td><td>A, U, C, G</td></tr>
+            <tr><td style="font-family:var(--font);font-weight:650">Partner of A</td><td>Thymine (T–A)</td><td>Uracil (U–A)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><b>Same (slide 30):</b> both are nucleic acids, both are made of nucleotides, and both have the bases C, G and A.<br><b>Different (slide 31):</b> DNA is double stranded and RNA is single stranded; they have different sugars; DNA uses thymine while RNA uses uracil.</p>
+    </div>
+
+    <div class="mixups">
+      <h3>Common mix-ups</h3>
+      <ul>
+        <li><b>Nucleotide, nucleic acid, nucleus.</b> A nucleotide is the monomer. A nucleic acid (DNA, RNA) is the polymer. The nucleus is a part of the cell where DNA is kept.</li>
+        <li><b>Thymine is only in DNA, uracil is only in RNA.</b> If you see a U, it's RNA.</li>
+        <li><b>Complementary isn't the same as identical.</b> The partner of ACT is TGA, not ACT.</li>
+        <li><b>Enzymes aren't a fifth macromolecule.</b> They're proteins.</li>
+      </ul>
+    </div>
+
+    <div class="packet">
+      <div class="packet-head"><h3>Packet check · pp. 13–14</h3><button class="btn sm reveal-all" type="button">Reveal all</button></div>
+      <p class="muted">Tap a blank to check what goes there.</p>
+      <ol>
+        <li>Monomer: <span class="blank">amino acids</span>. Different proteins are made up of an infinite combination of <span class="blank">20</span> amino acids.</li>
+        <li>The structure and function of a protein depends on its <span class="blank">amino acid sequence</span>.</li>
+        <li>Proteins are made of <span class="blank">C</span>, <span class="blank">H</span>, <span class="blank">O</span> and <span class="blank">N</span> (and often <span class="blank">S</span>).</li>
+        <li>S<span class="blank">tructure</span> (ex: <span class="blank">collagen</span>) · T<span class="blank">ransport</span> (ex: <span class="blank">hemoglobin</span>) · M<span class="blank">ovement</span> (ex: <span class="blank">actin &amp; myosin</span>) · D<span class="blank">efense</span> (ex: <span class="blank">antibodies</span>) · H<span class="blank">ormones</span> (ex: <span class="blank">insulin</span>) · E<span class="blank">nzymes</span> (ex: <span class="blank">lactase</span>)</li>
+        <li>Nucleic acids are made of <span class="blank">nucleotides</span>, found in every cell. Two examples are <span class="blank">DNA</span> and <span class="blank">RNA</span>.</li>
+        <li>DNA is <span class="blank">double stranded</span>, in the shape of a twisted <span class="blank">ladder</span>. RNA is <span class="blank">single stranded</span>.</li>
+        <li>3 parts of a nucleotide: <span class="blank">sugar</span>, <span class="blank">phosphate</span>, <span class="blank">nitrogen base</span>.</li>
+        <li>4 bases in DNA: <span class="blank">adenine, thymine, guanine, cytosine</span>. A pairs with <span class="blank">T</span>; G pairs with <span class="blank">C</span>.</li>
+        <li>DNA stores information on how to make a <span class="blank">protein</span>. It carries a <span class="blank">genetic</span> code.</li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- ===== Lesson 4 ===== -->
+  <article class="lesson" id="lesson-enz" data-t="enz">
+    <header class="lesson-head">
+      <div class="lesson-meta"><span class="chip" data-t="enz">Lesson 4</span><span>Enzymes Notes 26 TR · 13 slides · Packet pp. 16–17</span></div>
+      <h2>Enzymes</h2>
+      <p class="lesson-sum">The proteins that make chemical reactions in your body happen fast: how they work, what can stop them, and why they can be used again and again.</p>
+    </header>
+
+    <div class="concept">
+      <h3>Enzymes are proteins</h3>
+      <figure class="slide"><span class="src">Slide 2</span><blockquote>Enzymes are proteins made up of amino acids.</blockquote></figure>
+      <p>Enzymes are protein job #6 from Lesson 3. Like every protein, an enzyme's job depends on its <b>shape</b>. Keep that in mind; it explains everything else in this lesson.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Activation energy</h3>
+      <figure class="slide"><span class="src">Slides 3–4</span><blockquote>Enzymes speed up chemical reactions by lowering the activation energy. Activation energy: the amount of energy needed to undergo a reaction.</blockquote></figure>
+      <figure class="diagram">
+        <div class="scroll-x">
+        <svg viewBox="0 0 560 270" role="img" aria-label="Energy graph: the reaction without an enzyme has a tall energy hill; with an enzyme the hill is lower. Reactants and products are at the same levels in both.">
+          <path class="d-axis" d="M50 18 V236 H540"/>
+          <text x="28" y="130" text-anchor="middle" transform="rotate(-90 28 130)">Energy</text>
+          <text x="540" y="258" text-anchor="end">Reaction progress →</text>
+          <path class="d-level" d="M140 180 H300"/>
+          <path class="d-curve" d="M60 180 L140 180 C200 180 230 50 290 50 C350 50 380 210 440 210 L530 210"/>
+          <path class="d-curve enz" d="M60 180 L140 180 C200 180 230 125 290 125 C350 125 380 210 440 210 L530 210"/>
+          <path class="d-ea" d="M292 176 V58"/><path class="d-head" d="M286 64 L292 52 L298 64 Z"/>
+          <path class="d-ea enz" d="M304 176 V133"/><path class="d-head" style="fill:var(--accent)" d="M298 139 L304 127 L310 139 Z"/>
+          <text x="62" y="170" class="t-ink">Reactants</text>
+          <text x="448" y="200" class="t-ink">Products</text>
+          <path class="d-curve" d="M396 40 H426"/><text x="434" y="45">Without enzyme</text>
+          <path class="d-curve enz" d="M396 66 H426"/><text x="434" y="71">With enzyme</text>
+          <text x="396" y="98">Arrows = activation</text><text x="396" y="114">energy (the hill)</text>
+        </svg>
+        </div>
+        <figcaption>The enzyme lowers the hill. The reactants and products stay at the same energy; only the push needed to get started gets smaller.</figcaption>
+      </figure>
+      <p>Picture pushing a boulder over a hill to get it rolling down the other side. The height of the hill is the <b>activation energy</b>. An enzyme is like digging the hill down: the boulder still ends up in the same place, but it takes much less of a push, so it happens much faster.</p>
+      <p><b>Why does needing less activation energy help organisms?</b> Without enzymes, many reactions would need lots of heat to happen quickly, and that much heat would damage cells. Enzymes let reactions like digesting food and making ATP happen fast enough at normal body temperature to keep you alive.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Catalysts that cause chemical change</h3>
+      <figure class="slide"><span class="src">Slides 5–6, 13</span><blockquote>Enzymes are also catalysts: something that speeds up a reaction without being affected. Enzymes cause a chemical change. Enzymes CAN be reused!</blockquote></figure>
+      <p>A <b>catalyst</b> speeds up a reaction but is <b>not used up or changed</b> by it. The substrate changes into something new (a chemical change). The enzyme comes out exactly the same, so it can grab the next substrate and do it again, thousands of times.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Active site and substrate</h3>
+      <figure class="slide"><span class="src">Slides 7–8</span><blockquote>Active site: the part of the enzyme that bonds to the substrate. Substrate: the substance that undergoes a chemical change.</blockquote></figure>
+      <figure class="diagram">
+        <div class="scroll-x">
+        <svg viewBox="0 0 660 214" role="img" aria-label="Three steps: the substrate fits into the enzyme's active site, they form an enzyme-substrate complex, then products are released and the enzyme is unchanged">
+          <g transform="translate(40 90)"><path class="d-enz" d="M0 30 Q0 0 30 0 L52 0 L52 22 L88 22 L88 0 L110 0 Q140 0 140 30 L140 60 Q140 90 110 90 L30 90 Q0 90 0 60 Z"/></g>
+          <rect class="d-sub" x="93" y="40" width="34" height="20" rx="3"/>
+          <path class="d-arrow" d="M110 64 V80"/><path class="d-head" d="M105 78 L110 86 L115 78 Z"/>
+          <text x="135" y="55">Substrate</text>
+          <text class="t-ink" x="110" y="132" text-anchor="middle">active site ↑</text>
+          <text class="t-ink" x="110" y="160" text-anchor="middle">Enzyme</text>
+
+          <path class="d-arrow" d="M196 135 H224"/><path class="d-head" d="M222 129 L232 135 L222 141 Z"/>
+
+          <g transform="translate(260 90)"><path class="d-enz" d="M0 30 Q0 0 30 0 L52 0 L52 22 L88 22 L88 0 L110 0 Q140 0 140 30 L140 60 Q140 90 110 90 L30 90 Q0 90 0 60 Z"/></g>
+          <rect class="d-sub" x="313" y="92" width="34" height="20" rx="3"/>
+          <text class="t-ink" x="330" y="150" text-anchor="middle">Enzyme</text>
+
+          <path class="d-arrow" d="M416 135 H444"/><path class="d-head" d="M442 129 L452 135 L442 141 Z"/>
+
+          <g transform="translate(480 90)"><path class="d-enz" d="M0 30 Q0 0 30 0 L52 0 L52 22 L88 22 L88 0 L110 0 Q140 0 140 30 L140 60 Q140 90 110 90 L30 90 Q0 90 0 60 Z"/></g>
+          <rect class="d-sub" x="512" y="44" width="16" height="20" rx="3" transform="rotate(-14 520 54)"/>
+          <rect class="d-sub" x="566" y="34" width="16" height="20" rx="3" transform="rotate(12 574 44)"/>
+          <text x="590" y="50">Products</text>
+          <text class="t-ink" x="550" y="150" text-anchor="middle">Enzyme</text>
+
+          <text class="t-ink" x="110" y="200" text-anchor="middle">1. Substrate fits active site</text>
+          <text class="t-ink" x="330" y="200" text-anchor="middle">2. Enzyme–substrate complex</text>
+          <text class="t-ink" x="550" y="200" text-anchor="middle">3. Products leave, enzyme reused</text>
+        </svg>
+        </div>
+        <figcaption>The substrate fits the active site like a key in a lock. The shapes have to match, which is why each enzyme only works on its own substrate (lactase only breaks down lactose). <span class="xtra">Extra</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="concept">
+      <h3>Temperature and pH</h3>
+      <figure class="slide"><span class="src">Slides 9–10</span><blockquote>Enzymes are sensitive to temperature. Enzymes are sensitive to pH.</blockquote></figure>
+      <div class="charts">
+        <div class="chart"><span class="label">Activity vs. temperature</span><div data-chart="temp"></div></div>
+        <div class="chart"><span class="label">Activity vs. pH</span><div data-chart="ph"></div></div>
+      </div>
+      <p>Each enzyme has a temperature and a pH where it works fastest, called its <b>optimum</b>, which is the peak of each graph. Most human enzymes peak near body temperature, <b>37 °C</b>, and near <b>pH 7</b>. <span class="xtra">Extra</span> Move away from the peak in either direction and the enzyme slows down.</p>
+      <p><b>What these graphs show (packet p. 17):</b> enzyme activity rises to a peak at the best temperature or pH, then drops quickly on the other side as the enzyme gets denatured.</p>
+    </div>
+
+    <div class="concept">
+      <h3>Denatured enzymes</h3>
+      <figure class="slide"><span class="src">Slides 11–12</span><blockquote>When enzymes are in the wrong temperature or pH, they can be denatured. If an enzyme is denatured, then . . .</blockquote></figure>
+      <p><b>Denatured</b> means the enzyme has <b>lost its shape</b>: the protein chain unfolds. The active site gets bent out of shape, so the <b>substrate no longer fits</b>, and the enzyme <b>can't speed up the reaction anymore</b>. It's like trying to use a key in a lock that has melted.</p>
+      <p>Cooking an egg is denaturing: the clear egg white turns solid and white, and it never goes back. Too much heat usually denatures for good. Cold mostly just slows enzymes down, because molecules move slower. <span class="xtra">Extra</span></p>
+      <p>Try it yourself with the temperature and pH sliders in the <a href="#lab" data-go="lab">Lab</a>.</p>
+    </div>
+
+    <div class="mixups">
+      <h3>Common mix-ups</h3>
+      <ul>
+        <li><b>Enzymes don't add energy.</b> They lower the energy needed to start the reaction.</li>
+        <li><b>Enzymes aren't used up.</b> The substrate changes; the enzyme is reused.</li>
+        <li><b>Denatured doesn't mean broken into pieces.</b> It means the shape changed, so the active site no longer fits.</li>
+        <li><b>Substrate vs. product.</b> The substrate goes in; the products come out.</li>
+      </ul>
+    </div>
+
+    <div class="packet">
+      <div class="packet-head"><h3>Packet check · pp. 16–17</h3><button class="btn sm reveal-all" type="button">Reveal all</button></div>
+      <p class="muted">Tap a blank to check what goes there.</p>
+      <ol>
+        <li>Enzymes are <span class="blank">proteins</span> made up of <span class="blank">amino acids</span>.</li>
+        <li>Enzymes <span class="blank">speed up</span> chemical reactions by lowering the <span class="blank">activation energy</span>.</li>
+        <li>Activation energy: the amount of energy needed to <span class="blank">start (undergo) a reaction</span>.</li>
+        <li>Enzymes are also <span class="blank">catalysts</span>: something that speeds up a reaction without being affected.</li>
+        <li>Cause a <span class="blank">chemical</span> change.</li>
+        <li>Active site: <span class="blank">the part of the enzyme that bonds to the substrate</span>. Substrate: <span class="blank">the substance that undergoes a chemical change</span>.</li>
+        <li>Enzymes are sensitive to <span class="blank">temperature</span>. Enzymes are sensitive to <span class="blank">pH</span>.</li>
+        <li>When enzymes are in the wrong temperature or pH, they can be <span class="blank">denatured</span>.</li>
+        <li>What happens if an enzyme is denatured? <span class="blank">It loses its shape, the substrate can't fit the active site, and it stops working.</span></li>
+        <li>Can enzymes be reused? <span class="blank">Yes. They aren't changed or used up by the reaction.</span></li>
+      </ol>
+    </div>
+  </article>
+</section>
+
+<!-- ============================ FLASHCARDS ============================ -->
+<section class="view" data-view="cards" hidden>
+  <div class="view-head">
+    <p class="eyebrow">Flashcards</p>
+    <h1>Flip, sort, repeat</h1>
+    <p class="lede">Mark each card <b>Got it</b> or <b>Still learning</b>. Then switch on "Still learning only" to drill just the ones you missed. Your marks are saved in this browser.</p>
+  </div>
+  <div class="toolbar">
+    <div class="seg" id="fc-topics" role="group" aria-label="Deck"></div>
+  </div>
+  <div class="toolbar">
+    <label class="switch"><input type="checkbox" id="fc-only"> Still learning only</label>
+    <label class="switch"><input type="checkbox" id="fc-def"> Show definition first</label>
+    <button class="btn sm ghost" type="button" id="fc-shuffle">Shuffle</button>
+    <button class="btn sm ghost" type="button" id="fc-reset">Reset marks</button>
+  </div>
+  <div class="fc-wrap">
+    <div class="progress-line"><span id="fc-known-label"></span><span id="fc-set-label"></span></div>
+    <div class="bar" aria-hidden="true"><i id="fc-bar" style="width:0%"></i></div>
+    <div class="fc-stage" id="fc-stage">
+      <div class="fc" id="fc" role="button" tabindex="0" aria-label="Flashcard. Press to flip.">
+        <div class="face front"><div class="face-top"><span class="chip" id="fc-chip-f"></span><span id="fc-known-f"></span></div><div class="face-text" id="fc-front"></div><div class="face-hint">Tap or press Space to flip</div></div>
+        <div class="face back"><div class="face-top"><span class="chip" id="fc-chip-b"></span><span class="muted" id="fc-term-b"></span></div><div class="face-text long" id="fc-back"></div><div class="face-hint">Did you know it?</div></div>
+      </div>
+    </div>
+    <div class="empty" id="fc-empty" hidden><b>Every card in this set is marked "Got it".</b><span>Turn off "Still learning only" to review them all, or pick another deck.</span></div>
+    <div class="fc-controls">
+      <div class="grp"><button class="btn sm" type="button" id="fc-prev" aria-label="Previous card">←</button><span class="pos" id="fc-pos"></span><button class="btn sm" type="button" id="fc-next" aria-label="Next card">→</button></div>
+      <div class="grp"><button class="btn learn" type="button" id="fc-no">Still learning</button><button class="btn know" type="button" id="fc-yes">Got it</button></div>
+    </div>
+    <p class="keys"><kbd>Space</kbd> flip · <kbd>←</kbd> <kbd>→</kbd> move · <kbd>1</kbd> still learning · <kbd>2</kbd> got it</p>
+  </div>
+</section>
+
+<!-- ============================ TEST ============================ -->
+<section class="view" data-view="test" hidden>
+  <div class="view-head">
+    <p class="eyebrow">Practice test</p>
+    <h1>Test yourself</h1>
+    <p class="lede">Multiple choice and true/false questions from all four decks. Every answer comes with an explanation, and at the end you'll see which lesson needs more work.</p>
+  </div>
+
+  <div class="panel" id="t-setup">
+    <div class="field"><span class="label">Lessons</span><div class="seg" id="t-topics" role="group" aria-label="Lessons to include"></div></div>
+    <div class="field"><span class="label">Length</span><div class="seg" id="t-len" role="group" aria-label="Number of questions"></div></div>
+    <div class="row"><button class="btn primary" type="button" id="t-start">Start practice test</button><span class="muted" id="t-best"></span></div>
+  </div>
+
+  <div class="panel" id="t-run" hidden>
+    <div class="q-head"><span id="t-progress"></span><span id="t-chip"></span><span id="t-score"></span></div>
+    <div class="bar" aria-hidden="true"><i id="t-bar" style="width:0%;background:var(--accent)"></i></div>
+    <p class="q-text" id="t-q"></p>
+    <div class="opts" id="t-opts"></div>
+    <div class="explain" id="t-explain" hidden></div>
+    <div class="row"><button class="btn primary" type="button" id="t-next" hidden>Next question</button><button class="btn sm ghost" type="button" id="t-quit">End test</button></div>
+  </div>
+
+  <div class="panel" id="t-results" hidden>
+    <div class="row" style="justify-content:space-between;align-items:flex-end">
+      <div><span class="label">Your score</span><div class="score-big" id="r-score"></div><p class="muted" id="r-line"></p></div>
+      <div class="row"><button class="btn" type="button" id="r-missed">Retake missed questions</button><button class="btn primary" type="button" id="r-new">New test</button></div>
+    </div>
+    <div class="topic-bars" id="r-topics"></div>
+    <div class="missed" id="r-missed-list"></div>
+  </div>
+
+  <div class="view-head" style="margin-top:12px">
+    <h2>Written practice</h2>
+    <p class="muted">These are the open-response questions from your slides and packet. Write your answer first, then compare it with the model answer.</p>
+  </div>
+  <div class="written" id="written"></div>
+</section>
+
+<!-- ============================ LAB ============================ -->
+<section class="view" data-view="lab" hidden>
+  <div class="view-head">
+    <p class="eyebrow">Lab</p>
+    <h1>Hands-on practice</h1>
+    <p class="lede">Quick interactive drills for the skills your slides practice: pairing DNA bases, spotting organic compounds, sorting molecules, and seeing what temperature and pH do to an enzyme.</p>
+  </div>
+  <div class="tools">
+    <div class="tool">
+      <div class="tool-head"><h3>DNA pairing trainer</h3><p>Type the complementary strand. A ↔ T, C ↔ G. The first two strands are the ones from your slides.</p></div>
+      <div class="strand" id="dna-given" aria-label="Given strand"></div>
+      <label class="sr" for="dna-in">Complementary strand</label>
+      <input class="dna-input" id="dna-in" autocomplete="off" spellcheck="false" placeholder="Type the partner strand">
+      <div class="strand" id="dna-check" aria-live="polite"></div>
+      <p class="msg-line" id="dna-msg"></p>
+      <div class="row"><button class="btn primary" type="button" id="dna-go">Check</button><button class="btn" type="button" id="dna-new">New strand</button><button class="btn sm ghost" type="button" id="dna-show">Show answer</button><span class="tally" id="dna-tally"></span></div>
+    </div>
+
+    <div class="tool">
+      <div class="tool-head"><h3>Organic or not?</h3><p>The formulas from slide 8 plus a few more. Organic means it has carbon <b>and</b> hydrogen.</p></div>
+      <div class="org-list" id="org-list"></div>
+      <div class="row"><span class="tally" id="org-tally"></span><button class="btn sm ghost" type="button" id="org-reset">Start over</button></div>
+    </div>
+
+    <div class="tool">
+      <div class="tool-head"><h3>Which macromolecule?</h3><p>Sort each example into the right macromolecule.</p></div>
+      <div class="sort-card" id="sort-item"></div>
+      <div class="sort-btns" id="sort-btns"></div>
+      <p class="msg-line" id="sort-msg"></p>
+      <div class="row"><button class="btn primary" type="button" id="sort-next" hidden>Next</button><span class="tally" id="sort-tally"></span></div>
+    </div>
+
+    <div class="tool">
+      <div class="tool-head"><h3>Name that protein job</h3><p>Match each protein to its function: structure, transport, movement, defense, hormone or enzyme.</p></div>
+      <div class="sort-card" id="pj-item"></div>
+      <div class="sort-btns" id="pj-btns"></div>
+      <p class="msg-line" id="pj-msg"></p>
+      <div class="row"><button class="btn primary" type="button" id="pj-next" hidden>Next</button><span class="tally" id="pj-tally"></span></div>
+    </div>
+
+    <div class="tool wide">
+      <div class="tool-head"><h3>Enzyme lab: temperature &amp; pH</h3><p>Move the sliders and watch the enzyme's speed. Push it too far and it denatures: its active site loses its shape and the substrate stops fitting.</p></div>
+      <div class="lab-grid">
+        <div class="controls">
+          <div class="ctl"><label class="ctl-top" for="enz-type"><span>Enzyme</span></label>
+            <select id="enz-type"><option value="cell">Typical human enzyme (best at 37 °C, pH 7)</option><option value="pepsin">Pepsin, a stomach enzyme (best at 37 °C, pH 2)</option></select></div>
+          <div class="ctl"><div class="ctl-top"><label for="enz-t">Temperature</label><output id="enz-t-out" for="enz-t">37 °C</output></div><input type="range" id="enz-t" min="0" max="80" step="1" value="37"></div>
+          <div class="ctl"><div class="ctl-top"><label for="enz-p">pH</label><output id="enz-p-out" for="enz-p">7.0</output></div><input type="range" id="enz-p" min="0" max="14" step="0.5" value="7"></div>
+          <div class="readout"><span class="pct" id="enz-pct">100%</span><span class="pill ok" id="enz-pill">Working at full speed</span></div>
+          <p id="enz-why" class="muted"></p>
+          <div class="row"><button class="btn sm ghost" type="button" id="enz-reset">Reset to optimum</button></div>
+        </div>
+        <div style="display:grid;gap:14px;min-width:0">
+          <div class="enz-fig" id="enz-fig"></div>
+          <div class="charts">
+            <div class="chart"><span class="label">Activity vs. temperature</span><div id="lab-temp"></div></div>
+            <div class="chart"><span class="label">Activity vs. pH</span><div id="lab-ph"></div></div>
+          </div>
+        </div>
+      </div>
+      <p class="hint">The pepsin option and exact curve shapes go beyond your slides; they're here so you can see how an enzyme's best pH depends on where it works.</p>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="wrap foot">
+  <span>Built from your Google Slides decks: Intro to Macromolecules 26 TR, Carbohydrates &amp; Lipids 26 TR, Proteins &amp; Nucleic Acids 26 TR and Enzymes Notes 26 TR, plus the Biochemistry packet (pp. 10–17).</span>
+  <span>Facts marked Extra go beyond the slides. Flashcard marks, written answers and your best score are saved in this browser only.</span>
+</footer>
+
+<script>
+(function(){
+"use strict";
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store = {
+  get(k, d){ try { const v = localStorage.getItem("bsk:" + k); return v == null ? d : JSON.parse(v); } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem("bsk:" + k, JSON.stringify(v)); } catch(e){} }
+};
+function shuffle(a){ a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+const TOPICS = {
+  intro: { name: "Intro to Macromolecules", short: "Intro" },
+  carbs: { name: "Carbohydrates & Lipids", short: "Carbs & Lipids" },
+  prot:  { name: "Proteins & Nucleic Acids", short: "Proteins & Nucleic Acids" },
+  enz:   { name: "Enzymes", short: "Enzymes" }
+};
+const TKEYS = Object.keys(TOPICS);
+
+/* ---------------- DATA: flashcards ---------------- */
+const CARDS = [
+  ["intro","Macromolecule","A LARGE molecule made of more than 200 atoms. Example: a protein molecule (a water molecule has only 3 atoms)."],
+  ["intro","The 4 macromolecules","Carbohydrates, lipids, proteins and nucleic acids."],
+  ["intro","Organic compound","A compound that contains both carbon (C) and hydrogen (H). All four macromolecules are organic."],
+  ["intro","Most important biological elements","Carbon, hydrogen and oxygen (C, H, O)."],
+  ["intro","Less common biological elements","Nitrogen (N) and phosphorus (P)."],
+  ["intro","Monomer","One small molecule that bonds with others to build a polymer. Mono = one."],
+  ["intro","Polymer","A large molecule (macromolecule) formed from many monomers bonded together in long chains. Poly = many."],
+  ["intro","Monomer / polymer analogy","Monomers are like LEGO bricks and polymers are like the LEGO building, because many bricks are used to build it."],
+  ["intro","Is CO₂ organic?","No. It has carbon but no hydrogen."],
+  ["intro","Is CH₄ organic?","Yes. Methane has carbon and hydrogen."],
+  ["intro","Is H₂O organic?","No. Water has no carbon, even though it is in every living thing."],
+  ["intro","Is C₆H₁₂O₆ organic?","Yes. Glucose has carbon and hydrogen."],
+  ["carbs","Carbohydrate","Sugars and chains of sugars. Found in bread, rice, pasta, fruits, sugars and potatoes. Jobs: quick energy and structure."],
+  ["carbs","Glucose","A simple sugar with the formula C₆H₁₂O₆. The body turns it into quick energy."],
+  ["carbs","Elements in carbohydrates","Carbon, hydrogen and oxygen (C, H, O)."],
+  ["carbs","Monosaccharide","The monomer of carbohydrates: a single sugar, like glucose."],
+  ["carbs","Polysaccharide","The polymer of carbohydrates: many sugars bonded in a chain. Examples: starch, glycogen, cellulose."],
+  ["carbs","Starch","A complex carbohydrate (polysaccharide) found in potatoes, rice, pasta and bread. How plants store sugar."],
+  ["carbs","Glycogen","A polysaccharide made of many glucose units. How animals store glucose."],
+  ["carbs","Cellulose","A carbohydrate that forms the cell walls of plants (structure)."],
+  ["carbs","Chitin","A carbohydrate that forms the exoskeleton of insects and the cell walls of fungi."],
+  ["carbs","Sugar names end in…","-ose: glucose, fructose, lactose, maltose, dextrose."],
+  ["carbs","Two main functions of carbohydrates","1) Quick energy. 2) Structure (cellulose in plant cell walls, chitin in exoskeletons)."],
+  ["carbs","Lipids","Fats and oils, from butter, oil, avocados, meat and nuts. Examples: triglycerides, phospholipids, steroids, waxes."],
+  ["carbs","Elements in lipids","Carbon, hydrogen and oxygen (C, H, O)."],
+  ["carbs","Lipid building blocks","Fatty acids and glycerol."],
+  ["carbs","Saturated fat","A fat with only single bonds, like butter. The \"bad\" fat; solid at room temperature."],
+  ["carbs","Unsaturated fat","A fat with double bonds, like olive oil. The \"healthy\" fat; liquid at room temperature."],
+  ["carbs","Three functions of lipids","Energy storage, insulation, and forming the cell membrane."],
+  ["carbs","Lipid energy storage","Lipids store about 2× more energy than carbohydrates."],
+  ["carbs","Insulation","Lipids (fat) help keep us warm."],
+  ["carbs","Phospholipid bilayer","The double layer of lipids that makes the cell membrane. It controls what goes in and out of the cell."],
+  ["carbs","Homeostasis","Maintaining a stable internal environment."],
+  ["prot","Protein monomer","Amino acids."],
+  ["prot","How many amino acids?","20 different amino acids, combined in an infinite number of orders."],
+  ["prot","Polypeptide","A chain of amino acids joined together, which folds into a protein."],
+  ["prot","Sequence → structure → function","The order of amino acids decides the protein's shape, and its shape decides its job."],
+  ["prot","Elements in proteins","Carbon, hydrogen, oxygen, nitrogen, and often sulfur (C, H, O, N, S)."],
+  ["prot","The 6 protein functions","Structure, Transport, Movement, Defense, Hormones, Enzymes. (Students Take Many Difficult Homework Exams.)"],
+  ["prot","Collagen","Structure protein: supports skin, muscle, bones and connective tissue."],
+  ["prot","Hemoglobin","Transport protein: carries oxygen in your red blood cells."],
+  ["prot","Actin & myosin","Movement proteins that make your muscles contract."],
+  ["prot","Kinesin","A movement (motor) protein that carries cargo inside cells. It isn't alive; it's just a protein."],
+  ["prot","Antibodies","Defense proteins that help your body fight diseases."],
+  ["prot","Hormones (protein job)","Proteins that help cells communicate. Example: insulin helps cells use sugar."],
+  ["prot","Lactase","An enzyme that helps you digest lactose, the sugar in milk."],
+  ["prot","ATP synthase","An enzyme your cells make to produce ATP, the chemical cells use for energy."],
+  ["prot","Nucleic acid","A macromolecule that stores genetic information. Examples: DNA and RNA."],
+  ["prot","Nucleotide","The monomer of nucleic acids. 3 parts: sugar, phosphate, nitrogen base."],
+  ["prot","Elements in nucleic acids","Carbon, hydrogen, oxygen, nitrogen, phosphorus (C, H, O, N, P)."],
+  ["prot","DNA","Deoxyribonucleic acid. Double stranded, shaped like a twisted ladder. Stores the information for making proteins."],
+  ["prot","RNA","Ribonucleic acid. Single stranded, and uses uracil (U) instead of thymine."],
+  ["prot","The 4 DNA bases","Adenine (A), thymine (T), guanine (G), cytosine (C)."],
+  ["prot","Base pairing rules","A pairs with T, and C pairs with G. (In RNA, A pairs with U.)"],
+  ["prot","What holds DNA's two strands together?","Hydrogen bonds between the nitrogen bases on each strand."],
+  ["prot","Complement of ACTTGGAAGCA","TGAACCTTCGT"],
+  ["prot","DNA vs RNA: similarities","Both are nucleic acids, both are made of nucleotides, and both have the bases C, G and A."],
+  ["prot","DNA vs RNA: differences","DNA is double stranded, RNA single; they have different sugars; DNA has thymine, RNA has uracil."],
+  ["prot","DNA analogy","DNA is like IKEA instructions: it tells your body which proteins to make and how to build them."],
+  ["enz","Enzyme","A protein made of amino acids that speeds up chemical reactions."],
+  ["enz","How enzymes speed up reactions","By lowering the activation energy."],
+  ["enz","Activation energy","The amount of energy needed to start (undergo) a reaction."],
+  ["enz","Catalyst","Something that speeds up a reaction without being affected (changed or used up)."],
+  ["enz","Active site","The part of the enzyme that bonds to the substrate."],
+  ["enz","Substrate","The substance the enzyme acts on, which undergoes a chemical change."],
+  ["enz","Enzyme–substrate complex","The enzyme with its substrate bound in the active site, while the reaction happens."],
+  ["enz","Products","What the substrate turns into after the reaction."],
+  ["enz","Denatured","When an enzyme loses its shape (from the wrong temperature or pH), so the substrate no longer fits and it stops working."],
+  ["enz","Two things enzymes are sensitive to","Temperature and pH."],
+  ["enz","Can enzymes be reused?","Yes. They aren't changed or used up by the reaction."],
+  ["enz","Lock and key","The substrate fits the active site like a key fits a lock. The shapes must match."],
+  ["enz","Why less activation energy helps organisms","Reactions can happen fast at body temperature, without heat that would damage cells."],
+  ["enz","Enzyme names end in…","-ase: lactase, amylase, lipase, protease."]
+].map((c, i) => ({ id: c[0] + ":" + c[1], t: c[0], f: c[1], b: c[2] }));
+
+/* ---------------- DATA: questions (first option is correct; shuffled at runtime) ---------------- */
+const Q = [
+  ["intro","What makes a molecule a macromolecule, according to your notes?",["It's large: more than 200 atoms","It contains only carbon","It dissolves in water","It has exactly 3 atoms"],"\"Macro\" means large. Your notes define a macromolecule as having more than 200 atoms. Water has only 3."],
+  ["intro","Which of these is NOT one of the four macromolecules?",["Water","Lipids","Proteins","Nucleic acids"],"The Big Four are carbohydrates, lipids, proteins and nucleic acids. Water is a small molecule and isn't even organic."],
+  ["intro","An organic compound must contain which two elements?",["Carbon and hydrogen","Carbon and oxygen","Oxygen and hydrogen","Nitrogen and phosphorus"],"Organic = carbon AND hydrogen."],
+  ["intro","Which formula is an organic compound?",["CH₄","CO₂","H₂O","NaCl"],"CH₄ (methane) has both carbon and hydrogen. CO₂ has carbon but no hydrogen."],
+  ["intro","Why is CO₂ not organic?",["It has carbon but no hydrogen","It has no carbon","It is too large","It contains nitrogen"],"You need both C and H. CO₂ only has carbon and oxygen."],
+  ["intro","Which are the MOST important biological elements?",["Carbon, hydrogen, oxygen","Nitrogen, phosphorus, sulfur","Sodium, chlorine, carbon","Helium, neon, argon"],"Slide 6: the most important are C, H and O. Less common: N and P."],
+  ["intro","Which elements does your slide list as less common biological elements?",["Nitrogen and phosphorus","Carbon and hydrogen","Oxygen and carbon","Sodium and chlorine"],"N and P show up in proteins (N) and nucleic acids (N and P)."],
+  ["intro","A polymer is…",["A large molecule made of many monomers bonded in chains","A single small building block","A type of atom","A molecule with no carbon"],"Poly = many. Many monomers bonded in long chains make a polymer."],
+  ["intro","In the LEGO analogy, the monomer is…",["One LEGO brick","The finished LEGO building","The instruction booklet","The box"],"Monomers are the single bricks; the polymer is the building made from many of them."],
+  ["intro","True or false: C₆H₁₂O₆ (glucose) is an organic compound.",["True","False"],"It contains carbon and hydrogen, so it's organic.",true],
+  ["intro","True or false: Water is organic because it's found in all living things.",["False","True"],"Being in living things doesn't make something organic. Water has no carbon.",true],
+  ["intro","The prefix \"mono-\" in monomer means…",["One","Many","Large","Sugar"],"Mono = one, poly = many, -mer = part."],
+  ["intro","Which pair correctly matches a monomer to its polymer?",["Amino acids → protein","Glucose → DNA","Nucleotides → starch","Fatty acids → protein"],"Amino acids build proteins. Glucose builds starch, nucleotides build DNA/RNA."],
+  ["carbs","Which food is a major source of carbohydrates?",["Pasta","Butter","Olive oil","Avocado"],"Slide 2 lists bread, rice, pasta, fruits, sugars and potatoes. Butter, oil and avocado are lipid sources."],
+  ["carbs","What is the chemical formula of glucose?",["C₆H₁₂O₆","CO₂","C₈₈H₁₆₄O₁₀","CH₄"],"6 carbons, 12 hydrogens, 6 oxygens."],
+  ["carbs","Carbohydrates contain which elements?",["C, H, O","C, H, O, N","C, H, O, N, P","C, H, O, N, S"],"Carbs are only carbon, hydrogen and oxygen."],
+  ["carbs","The monomer of carbohydrates is a…",["Monosaccharide","Polysaccharide","Amino acid","Nucleotide"],"Mono-saccharide = one sugar, like glucose."],
+  ["carbs","Which of these is NOT a polysaccharide?",["Glucose","Starch","Glycogen","Cellulose"],"Glucose is a single sugar (monosaccharide). Starch, glycogen and cellulose are chains of sugars."],
+  ["carbs","What does cellulose do?",["Forms the cell walls of plants","Carries oxygen in blood","Stores genetic information","Insulates the body"],"Cellulose is a structural carbohydrate in plant cell walls."],
+  ["carbs","Chitin is found in…",["Insect exoskeletons and fungal cell walls","Plant cell walls","Human muscles","Cell membranes"],"Slide 11: chitin forms the exoskeleton of insects and the cell walls of fungi."],
+  ["carbs","What are the two main functions of carbohydrates?",["Quick energy and structure","Insulation and hormones","Genetic information and defense","Transport and movement"],"Your body turns glucose into quick energy, and cellulose and chitin provide structure."],
+  ["carbs","True or false: The names of most sugars end in \"-ose\".",["True","False"],"Glucose, fructose, lactose, maltose, dextrose.",true],
+  ["carbs","Lipids are commonly known as…",["Fats and oils","Sugars and starches","Genes","Enzymes"],"Slide 15: lipids are commonly known as fats and oils."],
+  ["carbs","Which food is a source of lipids?",["Avocados","Rice","Bread","Potatoes"],"Slide 14: butter, oil, avocados, meat and nuts."],
+  ["carbs","Which fat has only single bonds and is \"bad,\" like butter?",["Saturated fat","Unsaturated fat","Phospholipid","Cellulose"],"Saturated = single bonds = solid, like butter."],
+  ["carbs","Olive oil is an unsaturated fat because it…",["Has double bonds","Has only single bonds","Contains nitrogen","Is a carbohydrate"],"Unsaturated fats have double bonds between carbons."],
+  ["carbs","The building blocks of lipids are…",["Fatty acids and glycerol","Amino acids","Nucleotides","Monosaccharides"],"Slide 18: lipid monomers are fatty acids and glycerol."],
+  ["carbs","Compared with carbohydrates, lipids store…",["About 2× more energy","Half as much energy","The same energy","No energy"],"Slide 19: lipids store 2× more energy than carbs."],
+  ["carbs","Which lipid structure controls what goes in and out of a cell?",["The phospholipid bilayer (cell membrane)","The cellulose wall","Chitin","Glycogen"],"The phospholipid bilayer forms the cell membrane."],
+  ["carbs","Homeostasis means…",["Maintaining a stable internal environment","Making new cells","Breaking down food","Copying DNA"],"Homeostasis = keeping conditions inside the body stable."],
+  ["carbs","How does insulation by lipids help maintain homeostasis?",["It keeps body temperature stable","It speeds up reactions","It carries oxygen","It stores the genetic code"],"A fat layer holds in heat, so body temperature stays steady."],
+  ["prot","The monomers of proteins are…",["Amino acids","Nucleotides","Fatty acids","Monosaccharides"],"Slide 3: the monomers of proteins are amino acids."],
+  ["prot","How many different amino acids make up proteins?",["20","4","2","200"],"20 amino acids in endless combinations."],
+  ["prot","A protein's structure and function depend on its…",["Amino acid sequence","Number of oxygen atoms","Glycerol","Phosphate groups"],"Sequence → structure → function."],
+  ["prot","Which elements make up proteins?",["C, H, O, N, and often S","C, H, O only","C, H, O, N, P","Na and Cl"],"Proteins add nitrogen (and often sulfur) to C, H, O."],
+  ["prot","What does hemoglobin do?",["Carries oxygen in the blood (transport)","Supports skin (structure)","Fights disease (defense)","Contracts muscles (movement)"],"Hemoglobin is a transport protein in red blood cells."],
+  ["prot","Which protein provides structure to skin, bones and connective tissue?",["Collagen","Hemoglobin","Lactase","Insulin"],"Collagen is the structure example on slide 8."],
+  ["prot","Actin and myosin are proteins that…",["Make muscles contract","Carry oxygen","Store energy","Digest milk sugar"],"They're the movement example on slide 10."],
+  ["prot","Antibodies are an example of which protein function?",["Defense","Transport","Structure","Hormones"],"Antibodies help your body fight diseases."],
+  ["prot","Lactase is an enzyme that…",["Helps digest the sugar in milk","Carries oxygen","Builds plant cell walls","Pairs DNA bases"],"Lactase breaks down lactose, the sugar in milk products."],
+  ["prot","Insulin is a protein hormone that…",["Helps your cells use sugar","Carries oxygen","Fights pathogens","Insulates the body"],"Hormones help cells communicate; insulin tells cells to take in sugar."],
+  ["prot","What does ATP synthase do?",["Makes ATP, the chemical cells use for energy","Breaks down starch","Forms exoskeletons","Holds DNA strands together"],"ATP synthase is an enzyme (a protein) that produces ATP."],
+  ["prot","The monomer of nucleic acids is the…",["Nucleotide","Amino acid","Nucleus","Glycerol"],"Nucleic acids are made of nucleotides."],
+  ["prot","The three parts of a nucleotide are…",["Sugar, phosphate, nitrogen base","Glycerol, fatty acid, phosphate","Amino group, sugar, oxygen","Carbon, hydrogen, oxygen"],"Slide 20: sugar, phosphate, nitrogen base."],
+  ["prot","Which elements make up nucleic acids?",["C, H, O, N, P","C, H, O","C, H, O, N, S","C and H only"],"Nucleic acids are the macromolecule with phosphorus."],
+  ["prot","In DNA, adenine (A) pairs with…",["Thymine (T)","Cytosine (C)","Guanine (G)","Uracil (U)"],"A–T and C–G. Uracil only appears in RNA."],
+  ["prot","What is the complementary strand of ACTTGGAAGCA?",["TGAACCTTCGT","ACTTGGAAGCA","UGAACCUUCGU","ACGAAGGTTCA"],"Swap each base for its partner: A↔T, C↔G. Don't copy or reverse it, and DNA has no U."],
+  ["prot","What holds the two strands of DNA together?",["Hydrogen bonds between nitrogen bases","Phosphates bonding to phosphates","Glycerol","Sugars bonding to sugars"],"Slide 28: the bases on one strand connect to the bases on the other by hydrogen bonds."],
+  ["prot","Which is a difference between DNA and RNA?",["DNA has thymine; RNA has uracil instead","Only DNA is made of nucleotides","Only RNA has cytosine","DNA is single stranded"],"DNA: double stranded, thymine. RNA: single stranded, uracil."],
+  ["prot","True or false: RNA is double stranded, like a twisted ladder.",["False","True"],"DNA is the twisted ladder. RNA is single stranded.",true],
+  ["prot","What is DNA's main job?",["Store the instructions for making proteins","Speed up chemical reactions","Store energy long-term","Insulate the body"],"DNA stores information on how to make proteins; it carries the genetic code."],
+  ["prot","True or false: Anything you eat that was once alive contains nucleic acids.",["True","False"],"Every cell has nucleic acids, so anything that was once alive does too.",true],
+  ["enz","Enzymes are made of…",["Proteins (amino acids)","Lipids","Carbohydrates","Nucleotides"],"Slide 2: enzymes are proteins made of amino acids."],
+  ["enz","How do enzymes speed up chemical reactions?",["By lowering the activation energy","By raising the temperature","By becoming part of the product","By adding more substrate"],"They lower the energy needed to start the reaction."],
+  ["enz","Activation energy is…",["The energy needed to start a reaction","The energy released at the end","Energy stored in fat","How fast an enzyme moves"],"Slide 4: the amount of energy needed to undergo a reaction."],
+  ["enz","A catalyst is something that…",["Speeds up a reaction without being changed","Slows reactions down","Gets used up in the reaction","Is always a sugar"],"Enzymes are catalysts: they speed reactions up and come out unchanged."],
+  ["enz","The active site is…",["The part of the enzyme that bonds to the substrate","The product of a reaction","Where DNA is stored","The cell membrane"],"The substrate fits into the active site."],
+  ["enz","The substrate is…",["The substance that undergoes the chemical change","The enzyme itself","A type of lipid","The top of the energy hill"],"The enzyme acts on the substrate, turning it into products."],
+  ["enz","What happens when an enzyme is denatured?",["It changes shape, the substrate no longer fits, and it stops working","It works even faster","It turns into a carbohydrate","It splits into two enzymes"],"Denatured = lost its shape, so the active site no longer fits."],
+  ["enz","Which two factors can denature an enzyme, according to your slides?",["Temperature and pH","Color and size","Light and sound","Salt and sugar"],"Slides 9–11: enzymes are sensitive to temperature and pH."],
+  ["enz","True or false: Enzymes can be reused.",["True","False"],"They aren't changed or used up by the reaction.",true],
+  ["enz","True or false: Enzymes cause a chemical change.",["True","False"],"The substrate turns into new products.",true],
+  ["enz","On an energy graph, what does adding an enzyme change?",["The height of the activation energy hill (it gets lower)","The energy of the products","The energy of the reactants","Nothing"],"Only the hill gets lower; the start and end stay the same."],
+  ["enz","Why is a lower activation energy good for organisms?",["Reactions can happen fast at body temperature","Cells can get hotter","Enzymes get used up faster","DNA can skip base pairing"],"Without enzymes, reactions would need heat that would damage cells."],
+  ["enz","Human enzymes generally work best near…",["37 °C (body temperature)","0 °C","100 °C","70 °C"],"Body temperature is about 37 °C (98.6 °F). This goes a little beyond your slides."],
+  ["enz","An enzyme is heated to 70 °C, then cooled back to 37 °C. What most likely happens?",["It stays denatured and doesn't work","It works faster than before","It works normally again","It becomes a lipid"],"Heat usually denatures an enzyme for good, like a cooked egg can't un-cook."],
+  ["enz","Which name is most likely an enzyme?",["Protease","Glucose","Cellulose","Glycogen"],"Enzyme names usually end in -ase. The others are carbohydrates."]
+].map((q, i) => ({ id: i, t: q[0], q: q[1], o: q[2], e: q[3], tf: !!q[4] }));
+
+/* ---------------- DATA: written ---------------- */
+const WRITTEN = [
+  ["intro","What's the difference between a monomer and a polymer?","A monomer is one small molecule (a building block). A polymer is a large molecule made of many monomers bonded together in long chains. Example: amino acids (monomers) join to make a protein (polymer)."],
+  ["intro","Make your own monomer/polymer analogy.","Monomers are like train cars and polymers are like a whole train, because many cars link together to make one long train. (Any analogy works if many small identical-type pieces join to make one big thing.)"],
+  ["carbs","What are the two main functions of carbohydrates?","Carbohydrates provide quick energy (the body turns glucose into energy) and structure (cellulose forms plant cell walls; chitin forms insect exoskeletons and fungal cell walls)."],
+  ["carbs","How does each function of lipids help maintain homeostasis?","Energy storage keeps cells supplied with fuel even when you haven't eaten. Insulation holds in heat so body temperature stays stable. The cell membrane controls what goes in and out, keeping conditions inside the cell stable."],
+  ["prot","Why does the order of amino acids in a protein matter?","The sequence of amino acids decides how the chain folds, which decides the protein's shape, and the shape decides its function. A mutation that changes the sequence can give the protein the wrong shape, which is behind many genetic diseases."],
+  ["prot","Explain how the two strands (sides) of DNA stick together.","The nitrogen base on one strand bonds to the nitrogen base on the other strand by hydrogen bonds. A always pairs with T and C always pairs with G."],
+  ["prot","How are DNA and RNA the same and different?","Same: both are nucleic acids, both are made of nucleotides, and both have the bases A, C and G. Different: DNA is double stranded while RNA is single stranded; they have different sugars; DNA has thymine (T–A) while RNA has uracil (U–A)."],
+  ["enz","Why would it benefit organisms to require less activation energy?","With less activation energy, reactions can happen quickly at normal body temperature. Without enzymes, reactions would need much more heat or time, and that much heat would damage cells. Enzymes let things like digestion and making ATP happen fast enough to keep the organism alive."],
+  ["enz","What happens if an enzyme is denatured? Can enzymes be reused?","A denatured enzyme loses its shape because of the wrong temperature or pH. Its active site no longer fits the substrate, so it can't speed up the reaction anymore. A working enzyme can be reused, because it isn't changed or used up by the reaction."]
+].map(w => ({ t: w[0], q: w[1], a: w[2] }));
+
+/* ---------------- DATA: lab ---------------- */
+const ORGANIC = [
+  ["H₂O", false, "Water has no carbon."],
+  ["O₂", false, "Oxygen gas: no carbon, no hydrogen."],
+  ["C₆H₁₂O₆", true, "Glucose has carbon and hydrogen."],
+  ["NaCl", false, "Table salt is sodium and chlorine."],
+  ["CH₄", true, "Methane has carbon and hydrogen."],
+  ["CO₂", false, "It has carbon, but no hydrogen."],
+  ["C₈₈H₁₆₄O₁₀", true, "A large fat molecule with carbon and hydrogen."],
+  ["NH₃", false, "Ammonia has hydrogen but no carbon."],
+  ["C₁₂H₂₂O₁₁", true, "Table sugar (sucrose) has carbon and hydrogen."]
+];
+const MACROS = { carb: { name: "Carbohydrate", t: "carbs" }, lipid: { name: "Lipid", t: "carbs" }, protein: { name: "Protein", t: "prot" }, nucleic: { name: "Nucleic acid", t: "prot" } };
+const SORT = [
+  ["Glucose","carb","A simple sugar (monosaccharide), C₆H₁₂O₆."],
+  ["Starch","carb","A polysaccharide found in potatoes, rice and pasta."],
+  ["Cellulose","carb","A carbohydrate that forms plant cell walls."],
+  ["Chitin","carb","A carbohydrate in insect exoskeletons and fungal cell walls."],
+  ["Glycogen","carb","A chain of glucose units that animals store."],
+  ["Lactose","carb","Milk sugar. Sugar names end in -ose."],
+  ["Butter","lipid","A saturated fat."],
+  ["Olive oil","lipid","An unsaturated fat."],
+  ["Phospholipid","lipid","The lipid that makes up the cell membrane."],
+  ["Wax","lipid","Waxes are one of the lipid examples on slide 15."],
+  ["Steroid","lipid","Steroids are one of the lipid examples on slide 15."],
+  ["Fatty acids + glycerol","lipid","These are the building blocks of lipids."],
+  ["Hemoglobin","protein","A transport protein that carries oxygen."],
+  ["Collagen","protein","A structure protein in skin, bones and connective tissue."],
+  ["Antibody","protein","A defense protein that fights disease."],
+  ["Insulin","protein","A protein hormone that helps cells use sugar."],
+  ["Lactase","protein","An enzyme, and enzymes are proteins."],
+  ["A chain of amino acids","protein","Amino acids are the monomers of proteins."],
+  ["DNA","nucleic","Deoxyribonucleic acid, the double-stranded genetic material."],
+  ["RNA","nucleic","Ribonucleic acid, single stranded."],
+  ["A chain of nucleotides","nucleic","Nucleotides are the monomers of nucleic acids."]
+];
+const JOBS = { structure: "Structure", transport: "Transport", movement: "Movement", defense: "Defense", hormone: "Hormone", enzyme: "Enzyme" };
+const PJ = [
+  ["Collagen","structure","Collagen supports skin, muscle, bones and connective tissue."],
+  ["Hemoglobin","transport","Hemoglobin carries oxygen in red blood cells."],
+  ["Actin & myosin","movement","They make muscles contract."],
+  ["Kinesin","movement","Kinesin is a motor protein that walks cargo through the cell."],
+  ["Antibodies","defense","Antibodies help fight disease."],
+  ["Insulin","hormone","Insulin is a hormone that helps cells use sugar."],
+  ["Lactase","enzyme","Lactase speeds up the breakdown of milk sugar."],
+  ["ATP synthase","enzyme","ATP synthase is an enzyme that makes ATP."],
+  ["Amylase","enzyme","-ase ending: it's an enzyme (it breaks down starch)."],
+  ["Protease","enzyme","-ase ending: an enzyme that breaks down proteins."]
+];
+
+/* ---------------- tabs ---------------- */
+const VIEWS = ["learn","cards","test","lab"];
+let current = null;
+function show(v, opts){
+  if (!VIEWS.includes(v)) v = "learn";
+  current = v;
+  $$(".view").forEach(el => { el.hidden = el.dataset.view !== v; });
+  $$(".tab").forEach(b => b.setAttribute("aria-selected", String(b.dataset.view === v)));
+  store.set("tab", v);
+  try { if (location.hash.slice(1) !== v) history.replaceState(null, "", "#" + v); } catch(e){}
+  if (!(opts && opts.keepScroll)) window.scrollTo(0, 0);
+}
+$$(".tab").forEach(b => b.addEventListener("click", () => show(b.dataset.view)));
+document.addEventListener("click", e => {
+  const go = e.target.closest("[data-go]");
+  if (go){ e.preventDefault(); show(go.dataset.go); return; }
+  const j = e.target.closest("[data-jump]");
+  if (j){ e.preventDefault(); const t = document.getElementById(j.dataset.jump); if (t) t.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); }
+});
+window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (VIEWS.includes(h) && h !== current) show(h); });
+
+/* ---------------- stats ---------------- */
+$("#stats").innerHTML = [
+  ["4", "slide decks"], ["81", "slides"], [CARDS.length, "flashcards"], [Q.length, "practice questions"], ["5", "lab tools"]
+].map(s => "<span><b>" + s[0] + "</b> " + s[1] + "</span>").join("");
+
+/* ---------------- packet blanks ---------------- */
+$$(".blank").forEach(b => { b.setAttribute("role", "button"); b.tabIndex = 0; b.setAttribute("aria-label", "Hidden answer. Press to reveal."); });
+function setBlank(b, on){ b.classList.toggle("on", on); b.setAttribute("aria-label", on ? b.textContent : "Hidden answer. Press to reveal."); }
+document.addEventListener("click", e => {
+  const b = e.target.closest(".blank");
+  if (b){ setBlank(b, !b.classList.contains("on")); return; }
+  const r = e.target.closest(".reveal-all");
+  if (r){
+    const box = r.closest(".packet"); const bl = $$(".blank", box);
+    const anyHidden = bl.some(x => !x.classList.contains("on"));
+    bl.forEach(x => setBlank(x, anyHidden));
+    r.textContent = anyHidden ? "Hide all" : "Reveal all";
+  }
+});
+document.addEventListener("keydown", e => {
+  const b = e.target.closest && e.target.closest(".blank");
+  if (b && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); setBlank(b, !b.classList.contains("on")); }
+});
+
+/* ---------------- diagrams ---------------- */
+function hexPts(cx, cy, r){ const p = []; for (let i = 0; i < 6; i++){ const a = Math.PI / 180 * (60 * i - 90); p.push((cx + r * Math.cos(a)).toFixed(1) + "," + (cy + r * Math.sin(a)).toFixed(1)); } return p.join(" "); }
+function drawChain(el, hex){
+  const y = 44, H = 104; let s = "";
+  const shape = (cx) => hex ? '<polygon class="d-mono" points="' + hexPts(cx, y, 17) + '"/>' : '<circle class="d-mono" cx="' + cx + '" cy="' + y + '" r="15"/>';
+  s += shape(58);
+  s += '<path class="d-arrow" d="M92 ' + y + ' H130"/><path class="d-head" d="M128 ' + (y - 6) + ' L138 ' + y + ' L128 ' + (y + 6) + ' Z"/>';
+  const xs = []; for (let x = 172; x <= 524; x += hex ? 38 : 32) xs.push(x);
+  s += '<path class="d-link" d="M' + xs[0] + ' ' + y + ' H' + xs[xs.length - 1] + '"/>';
+  xs.forEach(x => { s += shape(x); });
+  s += '<text x="58" y="' + (H - 14) + '" text-anchor="middle">' + (hex ? "monosaccharide" : "monomer") + '</text>';
+  s += '<text x="' + ((xs[0] + xs[xs.length - 1]) / 2) + '" y="' + (H - 14) + '" text-anchor="middle">' + (hex ? "polysaccharide: many sugars bonded in a chain" : "polymer: many monomers bonded in a chain") + '</text>';
+  el.innerHTML = '<svg viewBox="0 0 560 ' + H + '" role="img" aria-label="' + (hex ? "One sugar ring next to a long chain of sugar rings" : "One monomer next to a long chain of monomers") + '">' + s + '</svg>';
+}
+const PAIR = { A: "T", T: "A", C: "G", G: "C" };
+function drawLadder(el, top){
+  const n = top.length, W = 560, step = (W - 80) / (n - 1);
+  let s = '<path class="d-back" d="M24 30 H' + (W - 24) + '"/><path class="d-back" d="M24 128 H' + (W - 24) + '"/>';
+  top.split("").forEach((b, i) => {
+    const x = 40 + i * step, p = PAIR[b];
+    s += '<rect class="b-' + b + '" x="' + (x - 14) + '" y="30" width="28" height="45" rx="5"/>';
+    s += '<rect class="b-' + p + '" x="' + (x - 14) + '" y="83" width="28" height="45" rx="5"/>';
+    s += '<path class="d-hb" d="M' + (x - 6) + ' 75 V83 M' + (x + 6) + ' 75 V83"/>';
+    s += '<text class="b-t" x="' + x + '" y="58" text-anchor="middle">' + b + '</text><text class="b-t" x="' + x + '" y="111" text-anchor="middle">' + p + '</text>';
+  });
+  s += '<text x="24" y="19">sugar–phosphate backbone</text><text x="24" y="148">sugar–phosphate backbone</text>';
+  el.innerHTML = '<svg viewBox="0 0 ' + W + ' 156" role="img" aria-label="DNA ladder: top strand ' + top + ', bottom strand ' + top.split("").map(b => PAIR[b]).join("") + '">' + s + '</svg>';
+}
+$$("[data-diagram]").forEach(el => {
+  const k = el.dataset.diagram;
+  if (k === "chain") drawChain(el, false);
+  if (k === "hexchain") drawChain(el, true);
+  if (k === "ladder") drawLadder(el, "ACTTGGAAGCA");
+});
+
+/* enzyme activity model */
+function fTemp(T){ const o = 37; return T <= o ? Math.exp(-Math.pow((T - o) / 24, 2)) : Math.exp(-Math.pow((T - o) / 8.5, 2)); }
+function fPH(p, o){ return Math.exp(-Math.pow((p - o) / 1.5, 2)); }
+function drawCurve(el, opts){
+  const W = 300, H = 158, L = 30, R = 290, T = 14, B = 122;
+  const sx = v => L + (R - L) * (v - opts.min) / (opts.max - opts.min);
+  const sy = a => B - (B - T) * a;
+  let d = "", area = "";
+  for (let i = 0; i <= 120; i++){
+    const v = opts.min + (opts.max - opts.min) * i / 120;
+    const x = sx(v).toFixed(1), y = sy(opts.fn(v)).toFixed(1);
+    d += (i ? "L" : "M") + x + " " + y;
+  }
+  area = d + "L" + R + " " + B + "L" + L + " " + B + "Z";
+  let s = '<path class="d-grid" d="M' + L + ' ' + sy(0.5) + ' H' + R + ' M' + L + ' ' + sy(1) + ' H' + R + '"/>';
+  s += '<path class="d-area" d="' + area + '" opacity=".55"/>';
+  s += '<path class="d-axis" d="M' + L + ' ' + T + ' V' + B + ' H' + R + '"/>';
+  s += '<path class="d-curve enz" d="' + d + '"/>';
+  opts.ticks.forEach(t => { s += '<text x="' + sx(t) + '" y="' + (B + 17) + '" text-anchor="middle">' + t + '</text>'; });
+  s += '<text x="' + R + '" y="' + (B + 33) + '" text-anchor="end">' + opts.unit + '</text>';
+  s += '<text x="' + (L - 6) + '" y="' + (sy(1) + 4) + '" text-anchor="end">max</text><text x="' + (L - 6) + '" y="' + (B + 4) + '" text-anchor="end">0</text>';
+  if (opts.danger != null){ s += '<text x="' + (sx(opts.danger) + 4) + '" y="' + (T + 12) + '" style="fill:var(--bad);font-size:11.5px">denatures</text><path d="M' + sx(opts.danger) + ' ' + T + ' V' + B + '" style="stroke:var(--bad);stroke-width:1;stroke-dasharray:3 3;fill:none"/>'; }
+  if (opts.value != null){
+    const x = sx(opts.value), y = sy(opts.fn(opts.value));
+    s += '<path class="d-vline" d="M' + x + ' ' + B + ' V' + y + '"/><circle class="d-marker" cx="' + x + '" cy="' + y + '" r="6"/>';
+  }
+  el.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + opts.label + '">' + s + '</svg>';
+}
+const tempChart = (el, v) => drawCurve(el, { fn: fTemp, min: 0, max: 80, ticks: [0, 20, 37, 60, 80], unit: "°C", danger: 50, value: v, label: "Enzyme activity rises with temperature to a peak at 37 °C, then falls sharply as the enzyme denatures" });
+const phChart = (el, v, o) => drawCurve(el, { fn: p => fPH(p, o), min: 0, max: 14, ticks: [0, 2, 4, 7, 10, 14], unit: "pH", danger: null, value: v, label: "Enzyme activity peaks at pH " + o + " and falls on either side" });
+tempChart($('[data-chart="temp"]'), null);
+phChart($('[data-chart="ph"]'), null, 7);
+
+/* ---------------- flashcards ---------------- */
+let known = new Set(store.get("known", []));
+const fc = { topic: store.get("fcTopic", "all"), list: [], i: 0, flipped: false };
+const fcOnly = $("#fc-only"), fcDef = $("#fc-def");
+fcDef.checked = !!store.get("fcDef", false);
+function segButtons(container, items, isOn, onClick){
+  container.innerHTML = "";
+  items.forEach(it => {
+    const b = document.createElement("button");
+    b.type = "button"; b.innerHTML = (it.t ? "<i></i>" : "") + esc(it.label);
+    if (it.t) b.dataset.t = it.t;
+    b.setAttribute("aria-pressed", String(isOn(it.key)));
+    b.addEventListener("click", () => onClick(it.key));
+    container.appendChild(b);
+  });
+}
+function fcTopicsRender(){
+  const items = [{ key: "all", label: "All cards" }].concat(TKEYS.map(k => ({ key: k, label: TOPICS[k].short, t: k })));
+  segButtons($("#fc-topics"), items, k => k === fc.topic, k => { fc.topic = k; store.set("fcTopic", k); fcTopicsRender(); fcBuild(); });
+}
+function fcBuild(shuffled){
+  let list = CARDS.filter(c => fc.topic === "all" || c.t === fc.topic);
+  if (fcOnly.checked) list = list.filter(c => !known.has(c.id));
+  fc.list = shuffled ? shuffle(list) : list;
+  fc.i = 0; fc.flipped = false;
+  fcRender(true);
+}
+function fcRender(instant){
+  const pool = CARDS.filter(c => fc.topic === "all" || c.t === fc.topic);
+  const k = pool.filter(c => known.has(c.id)).length;
+  $("#fc-known-label").textContent = k + " of " + pool.length + " marked Got it";
+  $("#fc-set-label").textContent = fc.topic === "all" ? "All lessons" : TOPICS[fc.topic].name;
+  $("#fc-bar").style.width = (pool.length ? Math.round(100 * k / pool.length) : 0) + "%";
+  const n = fc.list.length;
+  $("#fc-empty").hidden = n > 0;
+  $("#fc-stage").hidden = n === 0;
+  $$(".fc-controls button").forEach(b => { b.disabled = n === 0; });
+  if (!n){ $("#fc-pos").textContent = "0 / 0"; return; }
+  const c = fc.list[fc.i];
+  const card = $("#fc");
+  if (instant){ card.classList.add("instant"); }
+  card.classList.toggle("flipped", fc.flipped);
+  const front = fcDef.checked ? c.b : c.f, back = fcDef.checked ? c.f : c.b;
+  const ft = $("#fc-front"), bt = $("#fc-back");
+  ft.textContent = front; bt.textContent = back;
+  ft.classList.toggle("long", fcDef.checked);
+  bt.classList.toggle("long", !fcDef.checked);
+  [$("#fc-chip-f"), $("#fc-chip-b")].forEach(ch => { ch.dataset.t = c.t; ch.textContent = TOPICS[c.t].short; });
+  $("#fc-term-b").textContent = fcDef.checked ? "" : c.f;
+  $("#fc-known-f").innerHTML = known.has(c.id) ? '<span class="known-pill">Got it</span>' : "";
+  $("#fc-pos").textContent = (fc.i + 1) + " / " + n;
+  card.setAttribute("aria-label", (fc.flipped ? "Answer: " + back : "Card: " + front) + ". Press to flip.");
+  if (instant){ void card.offsetWidth; card.classList.remove("instant"); }
+}
+function fcFlip(){ if (!fc.list.length) return; fc.flipped = !fc.flipped; fcRender(false); }
+function fcMove(d){ const n = fc.list.length; if (!n) return; fc.i = (fc.i + d + n) % n; fc.flipped = false; fcRender(true); }
+function fcMark(isKnown){
+  const n = fc.list.length; if (!n) return;
+  const c = fc.list[fc.i];
+  if (isKnown) known.add(c.id); else known.delete(c.id);
+  store.set("known", Array.from(known));
+  if (fcOnly.checked && isKnown){
+    fc.list.splice(fc.i, 1);
+    if (fc.i >= fc.list.length) fc.i = 0;
+    fc.flipped = false; fcRender(true);
+  } else fcMove(1);
+}
+$("#fc").addEventListener("click", fcFlip);
+$("#fc").addEventListener("keydown", e => { if (e.key === "Enter"){ e.preventDefault(); fcFlip(); } });
+$("#fc-prev").addEventListener("click", () => fcMove(-1));
+$("#fc-next").addEventListener("click", () => fcMove(1));
+$("#fc-yes").addEventListener("click", () => fcMark(true));
+$("#fc-no").addEventListener("click", () => fcMark(false));
+$("#fc-shuffle").addEventListener("click", () => fcBuild(true));
+$("#fc-reset").addEventListener("click", () => {
+  CARDS.filter(c => fc.topic === "all" || c.t === fc.topic).forEach(c => known.delete(c.id));
+  store.set("known", Array.from(known)); fcBuild();
+});
+fcOnly.addEventListener("change", () => fcBuild());
+fcDef.addEventListener("change", () => { store.set("fcDef", fcDef.checked); fc.flipped = false; fcRender(true); });
+document.addEventListener("keydown", e => {
+  if (current !== "cards") return;
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea" || tag === "select") return;
+  if (e.key === " "){ e.preventDefault(); fcFlip(); }
+  else if (e.key === "ArrowRight") fcMove(1);
+  else if (e.key === "ArrowLeft") fcMove(-1);
+  else if (e.key === "1") fcMark(false);
+  else if (e.key === "2") fcMark(true);
+});
+fcTopicsRender(); fcBuild();
+
+/* ---------------- practice test ---------------- */
+const tset = { topics: new Set(store.get("tTopics", TKEYS)), len: store.get("tLen", 15) };
+if (!tset.topics.size) TKEYS.forEach(k => tset.topics.add(k));
+const LENS = [{ key: 10, label: "10" }, { key: 15, label: "15" }, { key: 25, label: "25" }, { key: 0, label: "All" }];
+function tSetupRender(){
+  segButtons($("#t-topics"), TKEYS.map(k => ({ key: k, label: TOPICS[k].name, t: k })), k => tset.topics.has(k), k => {
+    if (tset.topics.has(k)){ if (tset.topics.size > 1) tset.topics.delete(k); } else tset.topics.add(k);
+    store.set("tTopics", Array.from(tset.topics)); tSetupRender();
+  });
+  const avail = Q.filter(q => tset.topics.has(q.t)).length;
+  segButtons($("#t-len"), LENS.map(l => ({ key: l.key, label: l.key === 0 ? "All " + avail : l.label })), k => k === tset.len, k => { tset.len = k; store.set("tLen", k); tSetupRender(); });
+  const best = store.get("best", null);
+  $("#t-best").textContent = best != null ? "Best score so far: " + best + "%" : avail + " questions available";
+}
+const test = { qs: [], i: 0, picks: [], correct: 0 };
+function prep(q){ let opts = q.o.map((t, k) => ({ t: t, ok: k === 0 })); if (!q.tf) opts = shuffle(opts); return Object.assign({}, q, { opts: opts }); }
+function startTest(pool){
+  test.qs = pool.map(prep); test.i = 0; test.picks = []; test.correct = 0;
+  $("#t-setup").hidden = true; $("#t-results").hidden = true; $("#t-run").hidden = false;
+  renderQ(); $("#t-run").scrollIntoView({ block: "start" }); window.scrollBy(0, -90);
+}
+function renderQ(){
+  const q = test.qs[test.i], n = test.qs.length;
+  $("#t-progress").textContent = "Question " + (test.i + 1) + " of " + n;
+  $("#t-chip").innerHTML = '<span class="chip" data-t="' + q.t + '">' + esc(TOPICS[q.t].short) + "</span>";
+  $("#t-score").textContent = test.correct + " correct";
+  $("#t-bar").style.width = Math.round(100 * test.i / n) + "%";
+  $("#t-q").textContent = q.q;
+  const box = $("#t-opts"); box.innerHTML = "";
+  q.opts.forEach((o, k) => {
+    const b = document.createElement("button"); b.type = "button"; b.className = "opt";
+    b.innerHTML = '<span class="k">' + "ABCD"[k] + "</span><span>" + esc(o.t) + "</span>";
+    b.addEventListener("click", () => pick(k));
+    box.appendChild(b);
+  });
+  $("#t-explain").hidden = true; $("#t-next").hidden = true;
+}
+function pick(k){
+  if (test.picks[test.i] != null) return;
+  const q = test.qs[test.i]; const ok = q.opts[k].ok;
+  test.picks[test.i] = k; if (ok) test.correct++;
+  $$(".opt", $("#t-opts")).forEach((b, j) => {
+    b.disabled = true;
+    if (q.opts[j].ok) b.classList.add("right");
+    else if (j === k) b.classList.add("wrong");
+    else b.classList.add("dim");
+  });
+  const ex = $("#t-explain"); ex.hidden = false;
+  ex.className = "explain " + (ok ? "ok" : "no");
+  ex.innerHTML = "<b>" + (ok ? "Correct." : "Not quite.") + "</b>" + esc(q.e);
+  $("#t-score").textContent = test.correct + " correct";
+  const nb = $("#t-next"); nb.hidden = false; nb.textContent = test.i === test.qs.length - 1 ? "See results" : "Next question"; nb.focus();
+}
+function nextQ(){ if (test.i < test.qs.length - 1){ test.i++; renderQ(); } else finish(); }
+function finish(){
+  const answered = test.picks.filter(p => p != null).length;
+  const n = test.qs.length;
+  const pct = n ? Math.round(100 * test.correct / n) : 0;
+  $("#t-run").hidden = true; $("#t-results").hidden = false;
+  $("#r-score").textContent = pct + "%";
+  $("#r-line").textContent = test.correct + " of " + n + " correct" + (answered < n ? " (" + (n - answered) + " skipped)" : "") + ". " + (pct >= 90 ? "Excellent. You're ready." : pct >= 75 ? "Solid. Review the misses below." : pct >= 50 ? "Getting there. Re-read the weak lessons, then retake." : "Start with the Learn tab for the weak lessons, then try again.");
+  const best = store.get("best", null); if (answered === n && (best == null || pct > best)) store.set("best", pct);
+  const by = {};
+  test.qs.forEach((q, i) => { by[q.t] = by[q.t] || { n: 0, c: 0 }; by[q.t].n++; if (test.picks[i] != null && q.opts[test.picks[i]].ok) by[q.t].c++; });
+  $("#r-topics").innerHTML = Object.keys(by).map(t => { const p = Math.round(100 * by[t].c / by[t].n); return '<div class="topic-bar" data-t="' + t + '"><span>' + esc(TOPICS[t].name) + '</span><div class="bar"><i style="width:' + p + '%"></i></div><span>' + by[t].c + "/" + by[t].n + "</span></div>"; }).join("");
+  const missed = test.qs.filter((q, i) => test.picks[i] == null || !q.opts[test.picks[i]].ok);
+  $("#r-missed").hidden = missed.length === 0;
+  $("#r-missed-list").innerHTML = missed.length ? '<h3>Review what you missed</h3>' + missed.map(q => '<div class="missed-item"><span class="chip" data-t="' + q.t + '" style="justify-self:start">' + esc(TOPICS[q.t].short) + '</span><b>' + esc(q.q) + '</b><span>Answer: <b style="color:var(--good)">' + esc(q.o[0]) + "</b></span><span class=\"muted\">" + esc(q.e) + "</span></div>").join("") : '<p class="muted">No misses. Nice work.</p>';
+  test.missed = missed;
+  tSetupRender();
+}
+$("#t-start").addEventListener("click", () => {
+  let pool = shuffle(Q.filter(q => tset.topics.has(q.t)));
+  if (tset.len) pool = pool.slice(0, tset.len);
+  startTest(pool);
+});
+$("#t-next").addEventListener("click", nextQ);
+$("#t-quit").addEventListener("click", finish);
+$("#r-new").addEventListener("click", () => { $("#t-results").hidden = true; $("#t-setup").hidden = false; });
+$("#r-missed").addEventListener("click", () => { if (test.missed && test.missed.length) startTest(shuffle(test.missed.map(q => Q[q.id]))); });
+document.addEventListener("keydown", e => {
+  if (current !== "test" || $("#t-run").hidden) return;
+  const tag = (e.target.tagName || "").toLowerCase(); if (tag === "textarea" || tag === "input") return;
+  const map = { "1": 0, "2": 1, "3": 2, "4": 3, a: 0, b: 1, c: 2, d: 3 };
+  const k = map[e.key.toLowerCase()];
+  if (k != null && k < test.qs[test.i].opts.length && test.picks[test.i] == null){ e.preventDefault(); pick(k); }
+});
+tSetupRender();
+
+/* written practice */
+(function(){
+  const box = $("#written");
+  WRITTEN.forEach((w, i) => {
+    const d = document.createElement("div"); d.className = "w-item";
+    d.innerHTML = '<span class="chip" data-t="' + w.t + '" style="justify-self:start">' + esc(TOPICS[w.t].short) + '</span><h4>' + esc(w.q) + '</h4>' +
+      '<label class="sr" for="w-' + i + '">Your answer</label><textarea id="w-' + i + '" rows="3" placeholder="Write your answer here"></textarea>' +
+      '<div class="w-actions"><button class="btn sm" type="button" data-model="' + i + '">Show model answer</button></div>' +
+      '<div class="model" id="m-' + i + '" hidden><b>Model answer:</b> ' + esc(w.a) + '</div>';
+    box.appendChild(d);
+    const ta = $("#w-" + i, d);
+    ta.value = store.get("w" + i, "");
+    ta.addEventListener("input", () => store.set("w" + i, ta.value));
+  });
+  box.addEventListener("click", e => {
+    const m = e.target.closest("[data-model]");
+    if (m){ const el = $("#m-" + m.dataset.model); el.hidden = !el.hidden; m.textContent = el.hidden ? "Show model answer" : "Hide model answer"; }
+  });
+})();
+
+/* ---------------- lab: DNA ---------------- */
+const dna = { presets: ["ACTTGGAAGCA", "GTTACCGGACC"], n: 0, strand: "ACTTGGAAGCA", right: 0, tries: 0 };
+const baseBox = (b, bad) => '<span class="base' + (bad ? " bad" : "") + '" data-b="' + b + '">' + b + "</span>";
+function dnaRender(){
+  $("#dna-given").innerHTML = dna.strand.split("").map(b => baseBox(b)).join("");
+  $("#dna-check").innerHTML = ""; $("#dna-msg").textContent = ""; $("#dna-msg").className = "msg-line";
+  $("#dna-in").value = ""; $("#dna-in").maxLength = dna.strand.length;
+  $("#dna-tally").textContent = dna.tries ? dna.right + " of " + dna.tries + " strands perfect" : "";
+}
+function dnaNew(){
+  dna.n++;
+  if (dna.n < dna.presets.length) dna.strand = dna.presets[dna.n];
+  else { let s = ""; const L = 9 + Math.floor(Math.random() * 4); for (let i = 0; i < L; i++) s += "ATCG"[Math.floor(Math.random() * 4)]; dna.strand = s; }
+  dnaRender(); $("#dna-in").focus();
+}
+function dnaCheck(){
+  const want = dna.strand.split("").map(b => PAIR[b]).join("");
+  const got = $("#dna-in").value.toUpperCase().replace(/[^ATCG]/g, "");
+  if (!got.length){ $("#dna-msg").textContent = "Type the partner strand first."; return; }
+  let wrong = 0, html = "";
+  for (let i = 0; i < want.length; i++){ const g = got[i] || "?"; const bad = g !== want[i]; if (bad) wrong++; html += baseBox(g, bad); }
+  $("#dna-check").innerHTML = html;
+  dna.tries++;
+  const m = $("#dna-msg");
+  if (!wrong){ dna.right++; m.className = "msg-line ok"; m.textContent = "Perfect pairing. Every A met a T and every C met a G."; }
+  else { m.className = "msg-line no"; m.textContent = wrong + " base" + (wrong > 1 ? "s" : "") + " outlined in red. Remember A ↔ T, C ↔ G, and keep the same order."; }
+  $("#dna-tally").textContent = dna.right + " of " + dna.tries + " strands perfect";
+}
+$("#dna-in").addEventListener("input", e => { const v = e.target.value.toUpperCase().replace(/[^ATCG]/g, ""); if (v !== e.target.value) e.target.value = v; });
+$("#dna-in").addEventListener("keydown", e => { if (e.key === "Enter"){ e.preventDefault(); dnaCheck(); } });
+$("#dna-go").addEventListener("click", dnaCheck);
+$("#dna-new").addEventListener("click", dnaNew);
+$("#dna-show").addEventListener("click", () => {
+  const want = dna.strand.split("").map(b => PAIR[b]).join("");
+  $("#dna-check").innerHTML = want.split("").map(b => baseBox(b)).join("");
+  const m = $("#dna-msg"); m.className = "msg-line"; m.textContent = "Answer: " + want;
+});
+dnaRender();
+
+/* organic */
+const orgState = {};
+function orgRender(){
+  const list = $("#org-list"); list.innerHTML = "";
+  ORGANIC.forEach((o, i) => {
+    const r = document.createElement("div"); r.className = "org-row";
+    const st = orgState[i];
+    r.innerHTML = '<span class="formula">' + o[0] + '</span><div class="row"><button class="btn sm" type="button" data-org="' + i + '" data-v="1"' + (st ? " disabled" : "") + '>Organic</button><button class="btn sm" type="button" data-org="' + i + '" data-v="0"' + (st ? " disabled" : "") + '>Not organic</button></div>' +
+      (st ? '<span class="why ' + (st.ok ? "ok" : "no") + '">' + (o[1] ? "Organic. " : "Not organic. ") + esc(o[2]) + "</span>" : "");
+    list.appendChild(r);
+  });
+  const done = Object.keys(orgState).length, ok = Object.values(orgState).filter(s => s.ok).length;
+  $("#org-tally").textContent = done ? ok + " of " + done + " correct" + (done === ORGANIC.length ? " · all done" : "") : ORGANIC.length + " formulas";
+}
+$("#org-list").addEventListener("click", e => { const b = e.target.closest("[data-org]"); if (!b) return; const i = +b.dataset.org; orgState[i] = { ok: (b.dataset.v === "1") === ORGANIC[i][1] }; orgRender(); });
+$("#org-reset").addEventListener("click", () => { Object.keys(orgState).forEach(k => delete orgState[k]); orgRender(); });
+orgRender();
+
+/* generic one-at-a-time sorter */
+function makeSorter(cfg){
+  const st = { q: shuffle(cfg.items), i: 0, right: 0, done: 0, answered: false };
+  function render(){
+    if (st.i >= st.q.length){
+      $(cfg.item).textContent = st.right + " / " + st.q.length;
+      $(cfg.btns).innerHTML = ""; $(cfg.msg).className = "msg-line"; $(cfg.msg).textContent = "Round finished.";
+      const nb = $(cfg.next); nb.hidden = false; nb.textContent = "Play again";
+      return;
+    }
+    const it = st.q[st.i]; st.answered = false;
+    $(cfg.item).textContent = it[0];
+    $(cfg.btns).innerHTML = Object.keys(cfg.cats).map(k => '<button class="btn" type="button" data-k="' + k + '"' + (cfg.cats[k].t ? ' data-t="' + cfg.cats[k].t + '"' : "") + ">" + (cfg.cats[k].t ? "<i></i>" : "") + esc(cfg.cats[k].name) + "</button>").join("");
+    $(cfg.msg).textContent = ""; $(cfg.msg).className = "msg-line";
+    $(cfg.next).hidden = true;
+    $(cfg.tally).textContent = st.done ? st.right + " of " + st.done + " correct" : (st.q.length + " to sort");
+  }
+  $(cfg.btns).addEventListener("click", e => {
+    const b = e.target.closest("[data-k]"); if (!b || st.answered) return;
+    const it = st.q[st.i]; const ok = b.dataset.k === it[1];
+    st.answered = true; st.done++; if (ok) st.right++;
+    $$("button", $(cfg.btns)).forEach(x => { x.disabled = true; if (x.dataset.k === it[1]) { x.disabled = false; x.style.borderColor = "var(--good)"; x.style.color = "var(--good)"; } });
+    const m = $(cfg.msg); m.className = "msg-line " + (ok ? "ok" : "no");
+    m.textContent = (ok ? "Correct. " : "Answer: " + cfg.cats[it[1]].name + ". ") + it[2];
+    $(cfg.tally).textContent = st.right + " of " + st.done + " correct";
+    const nb = $(cfg.next); nb.hidden = false; nb.textContent = "Next"; nb.focus();
+  });
+  $(cfg.next).addEventListener("click", () => {
+    if (st.i >= st.q.length){ st.q = shuffle(cfg.items); st.i = 0; st.right = 0; st.done = 0; } else st.i++;
+    render();
+  });
+  render();
+}
+makeSorter({ items: SORT, cats: MACROS, item: "#sort-item", btns: "#sort-btns", msg: "#sort-msg", next: "#sort-next", tally: "#sort-tally" });
+const JOBCATS = {}; Object.keys(JOBS).forEach(k => { JOBCATS[k] = { name: JOBS[k] }; });
+makeSorter({ items: PJ, cats: JOBCATS, item: "#pj-item", btns: "#pj-btns", msg: "#pj-msg", next: "#pj-next", tally: "#pj-tally" });
+
+/* enzyme lab */
+const ENZ_PATH = "M0 30 Q0 0 30 0 L52 0 L52 22 L88 22 L88 0 L110 0 Q140 0 140 30 L140 60 Q140 90 110 90 L30 90 Q0 90 0 60 Z";
+const DEN_PATH = "M8 44 Q-4 14 30 16 Q48 -2 70 14 Q86 30 104 8 Q140 2 142 40 Q150 70 120 84 Q96 100 64 90 Q36 104 16 82 Q-2 66 8 44 Z";
+function enzUpdate(){
+  const type = $("#enz-type").value, opt = type === "pepsin" ? 2 : 7;
+  const T = +$("#enz-t").value, p = +$("#enz-p").value;
+  $("#enz-t-out").textContent = T + " °C"; $("#enz-p-out").textContent = p.toFixed(1);
+  const ft = fTemp(T), fp = fPH(p, opt), a = ft * fp;
+  const heatDead = T >= 50, phDead = Math.abs(p - opt) >= 3;
+  const dead = heatDead || phDead;
+  const pct = dead ? Math.round(a * 100) : Math.round(a * 100);
+  $("#enz-pct").textContent = pct + "%";
+  const pill = $("#enz-pill"), why = $("#enz-why");
+  if (dead){
+    pill.className = "pill dead"; pill.textContent = "Denatured";
+    why.textContent = heatDead
+      ? "Too hot. The heat shakes the protein until it unfolds. The active site loses its shape, so the substrate can't fit and the reaction stops being sped up. Cooling it down won't fix it."
+      : "The pH is too far from this enzyme's best pH (" + opt + "). The protein's shape changes, the active site no longer fits the substrate, and the enzyme stops working.";
+  } else if (a >= 0.8){
+    pill.className = "pill ok"; pill.textContent = "Working at full speed";
+    why.textContent = "Near its optimum: " + "37 °C and pH " + opt + ". The active site has the right shape and substrate molecules bump into it often.";
+  } else {
+    pill.className = "pill slow"; pill.textContent = "Slowed down";
+    if (ft < fp && T < 37) why.textContent = "Too cold to work fast. Molecules move slowly, so substrate reaches the active site less often. The enzyme isn't denatured: warm it up and it speeds back up.";
+    else if (ft < fp) why.textContent = "Getting too warm. The enzyme is starting to lose its shape. A little hotter and it will be denatured.";
+    else why.textContent = "The pH is off from this enzyme's best (pH " + opt + "), so its shape is slightly changed and it works more slowly.";
+  }
+  const sub = dead
+    ? '<rect class="d-sub" x="196" y="20" width="34" height="20" rx="3" transform="rotate(16 213 30)"/><text x="186" y="64" style="fill:var(--bad);font-size:12px">doesn\'t fit</text>'
+    : '<rect class="d-sub" x="' + (40 + 53) + '" y="' + (a >= 0.25 ? 52 : 22) + '" width="34" height="20" rx="3"/>';
+  $("#enz-fig").innerHTML = '<svg viewBox="0 0 260 160" role="img" aria-label="' + (dead ? "Denatured enzyme: unfolded, the substrate does not fit" : "Enzyme with substrate " + (a >= 0.25 ? "in its active site" : "approaching its active site")) + '">' +
+    '<g transform="translate(40 52)"><path class="d-enz" d="' + (dead ? DEN_PATH : ENZ_PATH) + '"/></g>' + sub +
+    '<text class="t-ink" x="110" y="' + (dead ? 120 : 112) + '" text-anchor="middle">' + (dead ? "unfolded enzyme" : "enzyme") + '</text>' +
+    (dead ? "" : '<text x="110" y="132" text-anchor="middle" style="font-size:12px">active site intact</text>') + "</svg>";
+  tempChart($("#lab-temp"), T);
+  phChart($("#lab-ph"), p, opt);
+}
+["#enz-type", "#enz-t", "#enz-p"].forEach(s => $(s).addEventListener("input", enzUpdate));
+$("#enz-type").addEventListener("change", () => { $("#enz-p").value = $("#enz-type").value === "pepsin" ? 2 : 7; enzUpdate(); });
+$("#enz-reset").addEventListener("click", () => { $("#enz-t").value = 37; $("#enz-p").value = $("#enz-type").value === "pepsin" ? 2 : 7; enzUpdate(); });
+enzUpdate();
+
+/* ---------------- start ---------------- */
+const startView = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : store.get("tab", "learn");
+show(startView, { keepScroll: true });
+})();
+</script>
+</body>
+</html>
