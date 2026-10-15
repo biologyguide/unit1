@@ -2,7 +2,7 @@
 
 A study site for the Biology biochemistry unit: macromolecules and enzymes.
 
-**Open it:** https://biologyguide.github.io/biochem-study-kit/
+**Open it:** https://biologyguide.github.io/unit1/
 
 Built from four class slide decks (Intro to Macromolecules, Carbohydrates & Lipids, Proteins & Nucleic Acids, Enzymes) and the matching packet pages.
 
